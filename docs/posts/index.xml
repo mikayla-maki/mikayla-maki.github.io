@@ -18,5 +18,18 @@ Working on a react-redux app, and I cannot use toolkit :(, and I&amp;rsquo;m hav
 I have a trello clone and I need to implement drag and drop, this means I that I have to have a virtual sort order for my lists and cards that isn&amp;rsquo;t &amp;lsquo;committed&amp;rsquo; to redux (and therefore saved to the browser) until after the drag and drop has ended.</description>
     </item>
     
+    <item>
+      <title>Cello Dnd Update</title>
+      <link>https://mikayla-maki.github.io/posts/cello-dnd-update/</link>
+      <pubDate>Tue, 09 Nov 2021 12:10:51 -0800</pubDate>
+      
+      <guid>https://mikayla-maki.github.io/posts/cello-dnd-update/</guid>
+      <description>Copy-and-Paste from Discord:
+I AM SO CLOSE
+React DnD has been a tough library to learn, especially because I&amp;rsquo;m new to everything and regretting some earlier decisions
+BUT I am succeeding. I have Drag and Drop working (with bad UX) for cards in the same list, after much hair pulling.
+Now I just have to re-do all that work, for the other two data sets, and then do something a little weird to enable cross-list dropping.</description>
+    </item>
+    
   </channel>
 </rss>
