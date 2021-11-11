@@ -1,5 +1,5 @@
 baseURL = 'https://mikayla-maki.github.io/'
 languageCode = 'en-us'
-title = 'Mikayla's Project Updates'
+title = 'Mikayla\'s Project Updates'
 theme = "papermod"
 publishdir = "docs"
