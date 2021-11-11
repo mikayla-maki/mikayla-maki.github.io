@@ -4,6 +4,7 @@ date: 2021-11-11T11:11:24-08:00
 draft: false
 ---
 Discord Transcript (future posts will be shared here first probably, maybe):
+
 Working on a react-redux app, and I cannot use toolkit :(, and I'm having a lot of problem managing stale state in my app, but I think I have a solution. 
 
 I have a trello clone and I need to implement drag and drop, this means I that I  have to have a virtual sort order for my lists and cards that isn't 'committed' to redux (and therefore saved to the browser) until after the drag and drop has ended. 

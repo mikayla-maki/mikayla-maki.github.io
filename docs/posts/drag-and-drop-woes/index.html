@@ -7,7 +7,8 @@
 <meta name="robots" content="index, follow">
 <title>Drag and Drop Woes | Project updates</title>
 <meta name="keywords" content="" />
-<meta name="description" content="Discord Transcript (future posts will be shared here first probably, maybe): Working on a react-redux app, and I cannot use toolkit :(, and I&rsquo;m having a lot of problem managing stale state in my app, but I think I have a solution.
+<meta name="description" content="Discord Transcript (future posts will be shared here first probably, maybe):
+Working on a react-redux app, and I cannot use toolkit :(, and I&rsquo;m having a lot of problem managing stale state in my app, but I think I have a solution.
 I have a trello clone and I need to implement drag and drop, this means I that I have to have a virtual sort order for my lists and cards that isn&rsquo;t &lsquo;committed&rsquo; to redux (and therefore saved to the browser) until after the drag and drop has ended.">
 <meta name="author" content="">
 <link rel="canonical" href="https://mikayla-maki.github.io/posts/drag-and-drop-woes/" />
@@ -59,7 +60,8 @@ I have a trello clone and I need to implement drag and drop, this means I that I
 
     </style>
 </noscript><meta property="og:title" content="Drag and Drop Woes" />
-<meta property="og:description" content="Discord Transcript (future posts will be shared here first probably, maybe): Working on a react-redux app, and I cannot use toolkit :(, and I&rsquo;m having a lot of problem managing stale state in my app, but I think I have a solution.
+<meta property="og:description" content="Discord Transcript (future posts will be shared here first probably, maybe):
+Working on a react-redux app, and I cannot use toolkit :(, and I&rsquo;m having a lot of problem managing stale state in my app, but I think I have a solution.
 I have a trello clone and I need to implement drag and drop, this means I that I have to have a virtual sort order for my lists and cards that isn&rsquo;t &lsquo;committed&rsquo; to redux (and therefore saved to the browser) until after the drag and drop has ended." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mikayla-maki.github.io/posts/drag-and-drop-woes/" /><meta property="article:section" content="posts" />
@@ -68,7 +70,8 @@ I have a trello clone and I need to implement drag and drop, this means I that I
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Drag and Drop Woes"/>
-<meta name="twitter:description" content="Discord Transcript (future posts will be shared here first probably, maybe): Working on a react-redux app, and I cannot use toolkit :(, and I&rsquo;m having a lot of problem managing stale state in my app, but I think I have a solution.
+<meta name="twitter:description" content="Discord Transcript (future posts will be shared here first probably, maybe):
+Working on a react-redux app, and I cannot use toolkit :(, and I&rsquo;m having a lot of problem managing stale state in my app, but I think I have a solution.
 I have a trello clone and I need to implement drag and drop, this means I that I have to have a virtual sort order for my lists and cards that isn&rsquo;t &lsquo;committed&rsquo; to redux (and therefore saved to the browser) until after the drag and drop has ended."/>
 
 
@@ -98,11 +101,11 @@ I have a trello clone and I need to implement drag and drop, this means I that I
   "@type": "BlogPosting",
   "headline": "Drag and Drop Woes",
   "name": "Drag and Drop Woes",
-  "description": "Discord Transcript (future posts will be shared here first probably, maybe): Working on a react-redux app, and I cannot use toolkit :(, and I\u0026rsquo;m having a lot of problem managing stale state in my app, but I think I have a solution.\nI have a trello clone and I need to implement drag and drop, this means I that I have to have a virtual sort order for my lists and cards that isn\u0026rsquo;t \u0026lsquo;committed\u0026rsquo; to redux (and therefore saved to the browser) until after the drag and drop has ended.",
+  "description": "Discord Transcript (future posts will be shared here first probably, maybe):\nWorking on a react-redux app, and I cannot use toolkit :(, and I\u0026rsquo;m having a lot of problem managing stale state in my app, but I think I have a solution.\nI have a trello clone and I need to implement drag and drop, this means I that I have to have a virtual sort order for my lists and cards that isn\u0026rsquo;t \u0026lsquo;committed\u0026rsquo; to redux (and therefore saved to the browser) until after the drag and drop has ended.",
   "keywords": [
     
   ],
-  "articleBody": "Discord Transcript (future posts will be shared here first probably, maybe): Working on a react-redux app, and I cannot use toolkit :(, and I’m having a lot of problem managing stale state in my app, but I think I have a solution.\nI have a trello clone and I need to implement drag and drop, this means I that I have to have a virtual sort order for my lists and cards that isn’t ‘committed’ to redux (and therefore saved to the browser) until after the drag and drop has ended.\nSo far I’ve been using a single ‘useSelector()’ call in root that assembles the denormalized data and then passes it down to children in props (kinda, it’s actually less organized than that but that’s the gist)\nAnd I think that was a mistake.\nWhat I’m going to change it to is officially start using selectors (defined in my slice files), each component is in charge of selecting and assembling it’s little piece of state using the hooks\nAnd the only things passed through props are call backs and ‘virtual’ data, e.g. the on-hover sort order, or the currently selected board\n",
+  "articleBody": "Discord Transcript (future posts will be shared here first probably, maybe):\nWorking on a react-redux app, and I cannot use toolkit :(, and I’m having a lot of problem managing stale state in my app, but I think I have a solution.\nI have a trello clone and I need to implement drag and drop, this means I that I have to have a virtual sort order for my lists and cards that isn’t ‘committed’ to redux (and therefore saved to the browser) until after the drag and drop has ended.\nSo far I’ve been using a single ‘useSelector()’ call in root that assembles the denormalized data and then passes it down to children in props (kinda, it’s actually less organized than that but that’s the gist)\nAnd I think that was a mistake.\nWhat I’m going to change it to is officially start using selectors (defined in my slice files), each component is in charge of selecting and assembling it’s little piece of state using the hooks\nAnd the only things passed through props are call backs and ‘virtual’ data, e.g. the on-hover sort order, or the currently selected board\n",
   "wordCount" : "191",
   "inLanguage": "en",
   "datePublished": "2021-11-11T11:11:24-08:00",
@@ -178,8 +181,8 @@ I have a trello clone and I need to implement drag and drop, this means I that I
 
 </div>
   </header> 
-  <div class="post-content"><p>Discord Transcript (future posts will be shared here first probably, maybe):
-Working on a react-redux app, and I cannot use toolkit :(, and I&rsquo;m having a lot of problem managing stale state in my app, but I think I have a solution.</p>
+  <div class="post-content"><p>Discord Transcript (future posts will be shared here first probably, maybe):</p>
+<p>Working on a react-redux app, and I cannot use toolkit :(, and I&rsquo;m having a lot of problem managing stale state in my app, but I think I have a solution.</p>
 <p>I have a trello clone and I need to implement drag and drop, this means I that I  have to have a virtual sort order for my lists and cards that isn&rsquo;t &lsquo;committed&rsquo; to redux (and therefore saved to the browser) until after the drag and drop has ended.</p>
 <p>So far I&rsquo;ve been using a single &lsquo;useSelector()&rsquo; call in root that assembles the denormalized data and then passes it down to children in props (kinda, it&rsquo;s actually less organized than that but that&rsquo;s the gist)</p>
 <p>And I think that was a mistake.</p>
