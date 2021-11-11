@@ -1,7 +1,7 @@
 ---
 title: "Drag and Drop Woes"
 date: 2021-11-11T11:11:24-08:00
-draft: true
+draft: false
 ---
 Discord Transcript (future posts will be shared here first probably, maybe):
 Working on a react-redux app, and I cannot use toolkit :(, and I'm having a lot of problem managing stale state in my app, but I think I have a solution. 
