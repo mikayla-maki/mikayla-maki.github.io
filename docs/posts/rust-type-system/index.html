@@ -5,15 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Cello Dnd Update | Mikayla&#39;s Project Updates</title>
+<title>Rust Type System | Mikayla&#39;s Project Updates</title>
 <meta name="keywords" content="" />
-<meta name="description" content="Copy-and-Paste from Discord:
-I AM SO CLOSE
-React DnD has been a tough library to learn, especially because I&rsquo;m new to everything and regretting some earlier decisions
-BUT I am succeeding. I have Drag and Drop working (with bad UX) for cards in the same list, after much hair pulling.
-Now I just have to re-do all that work, for the other two data sets, and then do something a little weird to enable cross-list dropping.">
+<meta name="description" content="I&rsquo;ve been fucking around and avoiding my finals by getting caught up on the first 5 days of the advent of code. Because I hate my brain, I have decided that it would be fun to learn how to write functional code in Rust, specifically for Day 3 Part 2.
+Functional Rust is terrifying.
+Look at this function header I just wrote:
+fn get_diagnostic_value&lt;F&gt;(bit_criteria: F, bit_index: usize, mut diagnostic_values: Vec&lt;Vec&lt;bool&gt;&gt;, bit_counts: [(i32, i32); 12]) -&gt; Vec&lt;bool&gt; where F: Fn([(i32, i32); 12]) -&gt; Box&lt;dyn Fn(&amp;Vec&lt;bool&gt;) -&gt; bool&gt; { Why do I do this to myself.">
 <meta name="author" content="">
-<link rel="canonical" href="https://mikayla-maki.github.io/posts/cello-dnd-update/" />
+<link rel="canonical" href="https://mikayla-maki.github.io/posts/rust-type-system/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.6f60056d44d3f7eb69a4bc6c332b59960f3a995802bded244750232f33713c49.css" integrity="sha256-b2AFbUTT9&#43;tppLxsMytZlg86mVgCve0kR1AjLzNxPEk=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -61,24 +60,22 @@ Now I just have to re-do all that work, for the other two data sets, and then do
         }
 
     </style>
-</noscript><meta property="og:title" content="Cello Dnd Update" />
-<meta property="og:description" content="Copy-and-Paste from Discord:
-I AM SO CLOSE
-React DnD has been a tough library to learn, especially because I&rsquo;m new to everything and regretting some earlier decisions
-BUT I am succeeding. I have Drag and Drop working (with bad UX) for cards in the same list, after much hair pulling.
-Now I just have to re-do all that work, for the other two data sets, and then do something a little weird to enable cross-list dropping." />
+</noscript><meta property="og:title" content="Rust Type System" />
+<meta property="og:description" content="I&rsquo;ve been fucking around and avoiding my finals by getting caught up on the first 5 days of the advent of code. Because I hate my brain, I have decided that it would be fun to learn how to write functional code in Rust, specifically for Day 3 Part 2.
+Functional Rust is terrifying.
+Look at this function header I just wrote:
+fn get_diagnostic_value&lt;F&gt;(bit_criteria: F, bit_index: usize, mut diagnostic_values: Vec&lt;Vec&lt;bool&gt;&gt;, bit_counts: [(i32, i32); 12]) -&gt; Vec&lt;bool&gt; where F: Fn([(i32, i32); 12]) -&gt; Box&lt;dyn Fn(&amp;Vec&lt;bool&gt;) -&gt; bool&gt; { Why do I do this to myself." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://mikayla-maki.github.io/posts/cello-dnd-update/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-11-09T12:10:51-08:00" />
-<meta property="article:modified_time" content="2021-11-09T12:10:51-08:00" />
+<meta property="og:url" content="https://mikayla-maki.github.io/posts/rust-type-system/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-05T12:30:53-08:00" />
+<meta property="article:modified_time" content="2021-12-05T12:30:53-08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Cello Dnd Update"/>
-<meta name="twitter:description" content="Copy-and-Paste from Discord:
-I AM SO CLOSE
-React DnD has been a tough library to learn, especially because I&rsquo;m new to everything and regretting some earlier decisions
-BUT I am succeeding. I have Drag and Drop working (with bad UX) for cards in the same list, after much hair pulling.
-Now I just have to re-do all that work, for the other two data sets, and then do something a little weird to enable cross-list dropping."/>
+<meta name="twitter:title" content="Rust Type System"/>
+<meta name="twitter:description" content="I&rsquo;ve been fucking around and avoiding my finals by getting caught up on the first 5 days of the advent of code. Because I hate my brain, I have decided that it would be fun to learn how to write functional code in Rust, specifically for Day 3 Part 2.
+Functional Rust is terrifying.
+Look at this function header I just wrote:
+fn get_diagnostic_value&lt;F&gt;(bit_criteria: F, bit_index: usize, mut diagnostic_values: Vec&lt;Vec&lt;bool&gt;&gt;, bit_counts: [(i32, i32); 12]) -&gt; Vec&lt;bool&gt; where F: Fn([(i32, i32); 12]) -&gt; Box&lt;dyn Fn(&amp;Vec&lt;bool&gt;) -&gt; bool&gt; { Why do I do this to myself."/>
 
 
 <script type="application/ld+json">
@@ -95,8 +92,8 @@ Now I just have to re-do all that work, for the other two data sets, and then do
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Cello Dnd Update",
-      "item": "https://mikayla-maki.github.io/posts/cello-dnd-update/"
+      "name": "Rust Type System",
+      "item": "https://mikayla-maki.github.io/posts/rust-type-system/"
     }
   ]
 }
@@ -105,20 +102,20 @@ Now I just have to re-do all that work, for the other two data sets, and then do
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Cello Dnd Update",
-  "name": "Cello Dnd Update",
-  "description": "Copy-and-Paste from Discord:\nI AM SO CLOSE\nReact DnD has been a tough library to learn, especially because I\u0026rsquo;m new to everything and regretting some earlier decisions\nBUT I am succeeding. I have Drag and Drop working (with bad UX) for cards in the same list, after much hair pulling.\nNow I just have to re-do all that work, for the other two data sets, and then do something a little weird to enable cross-list dropping.",
+  "headline": "Rust Type System",
+  "name": "Rust Type System",
+  "description": "I\u0026rsquo;ve been fucking around and avoiding my finals by getting caught up on the first 5 days of the advent of code. Because I hate my brain, I have decided that it would be fun to learn how to write functional code in Rust, specifically for Day 3 Part 2.\nFunctional Rust is terrifying.\nLook at this function header I just wrote:\nfn get_diagnostic_value\u0026lt;F\u0026gt;(bit_criteria: F, bit_index: usize, mut diagnostic_values: Vec\u0026lt;Vec\u0026lt;bool\u0026gt;\u0026gt;, bit_counts: [(i32, i32); 12]) -\u0026gt; Vec\u0026lt;bool\u0026gt; where F: Fn([(i32, i32); 12]) -\u0026gt; Box\u0026lt;dyn Fn(\u0026amp;Vec\u0026lt;bool\u0026gt;) -\u0026gt; bool\u0026gt; { Why do I do this to myself.",
   "keywords": [
     
   ],
-  "articleBody": "Copy-and-Paste from Discord:\nI AM SO CLOSE\nReact DnD has been a tough library to learn, especially because I’m new to everything and regretting some earlier decisions\nBUT I am succeeding. I have Drag and Drop working (with bad UX) for cards in the same list, after much hair pulling.\nNow I just have to re-do all that work, for the other two data sets, and then do something a little weird to enable cross-list dropping.\nIt’s actually kinda nice having three data types with the exact same dynamics, it allows me to easily DRY my code\nAs I have three implementations of everything, enough to see the patterns and draw out the larger structures I’m playing with\nAnd then once this is all done, I’ll finally be able to get back to why I actually started this project: playing with CRDTs and collaborative editing\nAlso, I have discovered that memo-ization has a secondary use beyond just caching: Dependency refreshing\nThis stuff is so cool\nI just solved a gnarly seeming stale state bug simply by adding the misbehaving variable to the right memoization dependency\n",
-  "wordCount" : "185",
+  "articleBody": "I’ve been fucking around and avoiding my finals by getting caught up on the first 5 days of the advent of code. Because I hate my brain, I have decided that it would be fun to learn how to write functional code in Rust, specifically for Day 3 Part 2.\nFunctional Rust is terrifying.\nLook at this function header I just wrote:\nfn get_diagnostic_value(bit_criteria: F, bit_index: usize, mut diagnostic_values: Vec, bit_counts: [(i32, i32); 12]) - Vec where F: Fn([(i32, i32); 12]) - Box) - bool { Why do I do this to myself. S M H.\nI should start seriously blogging sometime.\n",
+  "wordCount" : "103",
   "inLanguage": "en",
-  "datePublished": "2021-11-09T12:10:51-08:00",
-  "dateModified": "2021-11-09T12:10:51-08:00",
+  "datePublished": "2021-12-05T12:30:53-08:00",
+  "dateModified": "2021-12-05T12:30:53-08:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://mikayla-maki.github.io/posts/cello-dnd-update/"
+    "@id": "https://mikayla-maki.github.io/posts/rust-type-system/"
   },
   "publisher": {
     "@type": "Organization",
@@ -181,23 +178,21 @@ Now I just have to re-do all that work, for the other two data sets, and then do
   <header class="post-header">
     
     <h1 class="post-title">
-      Cello Dnd Update
+      Rust Type System
     </h1>
-    <div class="post-meta"><span title='2021-11-09 12:10:51 -0800 PST'>November 9, 2021</span>
+    <div class="post-meta"><span title='2021-12-05 12:30:53 -0800 PST'>December 5, 2021</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>Copy-and-Paste from Discord:</p>
-<p>I AM SO CLOSE</p>
-<p>React DnD has been a tough library to learn, especially because I&rsquo;m new to everything and regretting some earlier decisions</p>
-<p>BUT I am succeeding. I have Drag and Drop working (with bad UX) for cards in the same list, after much hair pulling.</p>
-<p>Now I just have to re-do all that work, for the other two data sets, and then do something a little weird to enable cross-list dropping.</p>
-<p>It&rsquo;s actually kinda nice having three data types with the exact same dynamics, it allows me to easily DRY my code</p>
-<p>As I have three implementations of everything, enough to see the patterns and draw out the larger structures I&rsquo;m playing with</p>
-<p>And then once this is all done, I&rsquo;ll finally be able to get back to why I actually started this project: playing with CRDTs and collaborative editing</p>
-<p>Also, I have discovered that memo-ization has a secondary use beyond just caching: Dependency refreshing</p>
-<p>This stuff is so cool</p>
-<p>I just solved a gnarly seeming stale state bug simply by adding the misbehaving variable to the right memoization dependency</p>
+  <div class="post-content"><p>I&rsquo;ve been fucking around and avoiding my finals by getting caught up on the first 5 days of <a href="https://adventofcode.com">the advent of code</a>.
+Because I hate my brain, I have decided that it would be fun to learn how to write functional code in Rust, specifically for Day 3 Part 2.</p>
+<p>Functional Rust is terrifying.</p>
+<p>Look at this function header I just wrote:</p>
+<pre tabindex="0"><code>fn get_diagnostic_value&lt;F&gt;(bit_criteria: F, bit_index: usize, mut diagnostic_values: Vec&lt;Vec&lt;bool&gt;&gt;, bit_counts: [(i32, i32); 12]) 
+    -&gt; Vec&lt;bool&gt; 
+    where F: Fn([(i32, i32); 12]) -&gt; Box&lt;dyn Fn(&amp;Vec&lt;bool&gt;) -&gt; bool&gt; {
+</code></pre><p>Why do I do this to myself. S M H.</p>
+<p>I should start seriously blogging sometime.</p>
 
 
   </div>
