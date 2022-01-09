@@ -44,11 +44,11 @@ philosophical question, but rather a mechanical one. If we can show that a
 mechanism exists to amplify the behavior of any individual to the point where
 that action effected the entire world, then this issue is resolved and we can
 get on with actually doing something important. Thankfully such a mechanism
-exists, <a href="https://en.wikipedia.org/wiki/Information_cascade">information
-cascades</a> allow the actions of one person to be amplified by subsequent
+exists, [information cascades]("https://en.wikipedia.org/wiki/Information_cascade")
+allow the actions of one person to be amplified by subsequent
 participants, even overriding their preferences. For a real life, and extreme,
 example see
-<a href="https://en.wikipedia.org/wiki/Mohamed_Bouazizi">Mohamed Bouazizi</a>,
+[Mohamed Bouazizi](ref="https://en.wikipedia.org/wiki/Mohamed_Bouazizi),
 who catalyzed the Arab Spring rebellions by lighting himself on fire.
 
 With these three axioms, and the bundle of philosophical claims they imply, 
