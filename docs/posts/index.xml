@@ -6,7 +6,26 @@
     <description>Recent content in Posts on Mikayla&#39;s Project Updates</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Jan 2022 15:44:18 -0800</lastBuildDate><atom:link href="https://mikayla-maki.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Jan 2022 14:25:52 -0800</lastBuildDate><atom:link href="https://mikayla-maki.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>M&#39;s Idea Graph Format Specifier</title>
+      <link>https://mikayla-maki.github.io/posts/ms-idea-graph-format-specifier/</link>
+      <pubDate>Sat, 22 Jan 2022 14:25:52 -0800</pubDate>
+      
+      <guid>https://mikayla-maki.github.io/posts/ms-idea-graph-format-specifier/</guid>
+      <description>In my brain, ideas are embedded in a network of implications, assumptions, and statements. But it&amp;rsquo;s hard to keep the whole shape of it in my head at once. I&amp;rsquo;m much more comfortable relaxing into the stream of inferences and letting the implications guide me to wherever the ideas lie. But to become my best self, I need to start telling people these ideas and engaging in discourses. Otherwise, I risk letting my own biases paper over the holes in my logic.</description>
+    </item>
+    
+    <item>
+      <title>P2P Browser</title>
+      <link>https://mikayla-maki.github.io/posts/p2p-browser/</link>
+      <pubDate>Sat, 22 Jan 2022 14:04:11 -0800</pubDate>
+      
+      <guid>https://mikayla-maki.github.io/posts/p2p-browser/</guid>
+      <description>Assumptions: (what is this?)
+ Client-server architecture needs to be replaced by P2P  I&amp;rsquo;ve been seeing a lot of talk from smart people about how to do a p2p internet properly, and I want to throw my own architecture proposal into the ring. My goal is to surpass the ease of use and accessibility of modern social media apps, while also structurally distributing power to users (also referred to as &amp;lsquo;peers&amp;rsquo;).</description>
+    </item>
+    
     <item>
       <title>Axioms of Action</title>
       <link>https://mikayla-maki.github.io/posts/axioms-of-action/</link>
