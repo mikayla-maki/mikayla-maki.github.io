@@ -8,7 +8,7 @@ This is a copy of the term paper I wrote for a class on internet markets.
 I'm copying it here because it distills the last 6 months of research I've
 done into my current working opinions and plans. 
 
-### Breaking the Chain: I-Confluence and Cryptocurrency.
+## Breaking the Chain: I-Confluence and Cryptocurrency.
 
 Managing byzantine faults is a fundamental challenge for any distributed system. From the double spend problem, to sybil attacks, their existence sets hard limits on what is possible to coordinate. The Proof Of X schemes that cryptocurrencies use to secure their ledgers (e.g. work, space, and stake) use cryptographically expensive operation to make it infeasible for an attacker with less than 1/3 network share to break them. But the field of distributed database design has a solution: invariant confluence. I-confluent transactions are impervious to byzantine attacks and make expensive Proof Of X systems irrelevant. But there’s a catch; the only ledger system that can be implemented with I-confluent transactions isn’t even recognizable as a currency: unlimited mutual credit. 
 
