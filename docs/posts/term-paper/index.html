@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Term Paper | Mikayla&#39;s Project Updates</title>
+<meta name="keywords" content="" />
+<meta name="description" content="This is a copy of the term paper I wrote for a class on internet markets. I&rsquo;m copying it here because it distills the last 6 months of research I&rsquo;ve done into my current working opinions and plans.
+Mikayla Maki, CS-410: Internet Markets Term Paper
+Managing byzantine faults is a fundamental challenge for any distributed system. From the double spend problem, to sybil attacks, their existence sets hard limits on what is possible to coordinate.">
+<meta name="author" content="">
+<link rel="canonical" href="https://mikayla-maki.github.io/posts/term-paper/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.6f60056d44d3f7eb69a4bc6c332b59960f3a995802bded244750232f33713c49.css" integrity="sha256-b2AFbUTT9&#43;tppLxsMytZlg86mVgCve0kR1AjLzNxPEk=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://mikayla-maki.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://mikayla-maki.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://mikayla-maki.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://mikayla-maki.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://mikayla-maki.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.89.2" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Term Paper" />
+<meta property="og:description" content="This is a copy of the term paper I wrote for a class on internet markets. I&rsquo;m copying it here because it distills the last 6 months of research I&rsquo;ve done into my current working opinions and plans.
+Mikayla Maki, CS-410: Internet Markets Term Paper
+Managing byzantine faults is a fundamental challenge for any distributed system. From the double spend problem, to sybil attacks, their existence sets hard limits on what is possible to coordinate." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mikayla-maki.github.io/posts/term-paper/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-18T23:59:28-07:00" />
+<meta property="article:modified_time" content="2022-03-18T23:59:28-07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Term Paper"/>
+<meta name="twitter:description" content="This is a copy of the term paper I wrote for a class on internet markets. I&rsquo;m copying it here because it distills the last 6 months of research I&rsquo;ve done into my current working opinions and plans.
+Mikayla Maki, CS-410: Internet Markets Term Paper
+Managing byzantine faults is a fundamental challenge for any distributed system. From the double spend problem, to sybil attacks, their existence sets hard limits on what is possible to coordinate."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://mikayla-maki.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Term Paper",
+      "item": "https://mikayla-maki.github.io/posts/term-paper/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Term Paper",
+  "name": "Term Paper",
+  "description": "This is a copy of the term paper I wrote for a class on internet markets. I\u0026rsquo;m copying it here because it distills the last 6 months of research I\u0026rsquo;ve done into my current working opinions and plans.\nMikayla Maki, CS-410: Internet Markets Term Paper\nManaging byzantine faults is a fundamental challenge for any distributed system. From the double spend problem, to sybil attacks, their existence sets hard limits on what is possible to coordinate.",
+  "keywords": [
+    
+  ],
+  "articleBody": "This is a copy of the term paper I wrote for a class on internet markets. I’m copying it here because it distills the last 6 months of research I’ve done into my current working opinions and plans.\nMikayla Maki, CS-410: Internet Markets Term Paper\nManaging byzantine faults is a fundamental challenge for any distributed system. From the double spend problem, to sybil attacks, their existence sets hard limits on what is possible to coordinate. The Proof Of X schemes that cryptocurrencies use to secure their ledgers (e.g. work, space, and stake) use cryptographically expensive operation to make it infeasible for an attacker with less than 1/3 network share to break them. But the field of distributed database design has a solution: invariant confluence. I-confluent transactions are impervious to byzantine attacks and make expensive Proof Of X systems irrelevant. But there’s a catch; the only ledger system that can be implemented with I-confluent transactions isn’t even recognizable as a currency: unlimited mutual credit.  ###Byzantine Faults \u0026 How Blockchains Manage Them\nCryptocurrencies, as distributed and trustless systems, are subject to Byzantine Faults. Any particular node of the network may misbehave in arbitrarily destructive ways, such as spending the same coin twice. This vulnerability is managed by first constructing a causal chain of transactions, and then attaching economic rewards for maintaining that causality. Proof of Work and Proof of Space both rely on expensive physical processes, such as generating hashes, to make it harder to rearrange causality than it is to maintain it. Proof of Stake is less ecologically destructive but still relies on locking up capital in the staking process. As of 3/18/22, it costs $94,000 (2022) to purchase the 32 ETH required to participate in Ethereum’s Proof of Stake chain. With all these resources, (Pease et al. 1980) show that these networks can tolerate no more than 1/3 of their members being Byzantine Faulty before their system guarantees are compromised. Other techniques for scaling blockchains rely on having a Proof of X substrate, and all of their problems, to fallback on (Decker \u0026 Wattenhofer, 2015) (Poon \u0026 Dryja, 2016) or compromise trustlessness by relying Intel’s engineers and factories to produce a perfect SGX chip (Lind et al., 2019). However, there’s an alternative to wasting money or energy securing the network: Invariant Confluent Transactions.  ###I-confluence and How Synchronization Relates to Byzantine Tolerance\nCryptocurrencies are fundamentally a subset of the field of distributed database systems, tuned to the needs of an exceptionally hostile environment. Within this context, byzantine faults are a type of coordination problem. All of the correct peers in a network must temporarily stop processing, use some consensus mechanism to ensure that no byzantine faults have occurred and then resume accepting transactions. In non-byzantine environments, (Bailis et al. 2014) show that certain applications have a property called ‘invariant confluence’ (I-confluence) which allows certain transactions to be committed concurrently, without synchronization. I-confluence only applies when there is a database state, e.g. ’account balance’, an invariant, e.g. ‘must be  0’, and a transaction which can only generate states that maintain the given invariant, even when combined in an arbitrary order, e.g. ‘add a whole number to account balance’. (Kleppmann \u0026 Howard, 2020) show that I-confluence is necessary and sufficient for a property they call Byzantine Eventual Consistency (BEC). Systems which are BEC can handle any number of byzantine faulty nodes without coordination. This is both far more resilient than cryptocurrency’s 1/3 limit, and far more efficient than buying datacenters full of GPUs. There’s only one problem: subtracting coins from ‘account balance’ is not an I-confluent transaction. Let’s say ‘account balance’ is ₿100. database replica A preserves the ‘ 0’ invariant locally and processes a -₿60 transaction. Database replica B also preserves it locally and processes a -₿50 transaction. When merged, these two states show an account balance of -₿10, violating the ‘account balance  0’ constraint. This is the double spend problem, and as this transaction and invariant are not I-confluent, it is impossible to implement a bitcoin-style cryptocurrency without expending massive resources to resist byzantine faulty peers.  I-Confluent Alternatives But bitcoin is not the only option. If we could remove the ‘account balance  0’ invariant, then transactions would be I-confluent and would no longer need expensive synchronization. This can be done with a money system known as ‘Mutual Credit’. Bitcoin, and most other cryptocurrencies, were designed specifically to be ‘digital gold’: with a limited and uniform supply of coins for exchange. Mutual credit lifts the limited and uniform constraints, any user can generate a credit, a negative balance, and a corresponding debit, a positive balance, in someone else’s account. The total money supply is always 0 but the total liquidity expands and contracts (‘breathes’) dynamically as user’s needs change. Rather than be limited by what they have, users are constrained by their trust for each other. If Alice is untrustworthy, she effectively hyper-inflates her supply of tokens. Bob, knowing she’s untrustworthy, has no reason to accept millions of Alice’s credits until Alice repairs her books. A mutual credit database would be fast, fair, cheap, and could provide a market based means of managing a money supply. If needed, say for international travel, further constrains could be opted-into with this system to provide different kinds of guarantees. One example could be a notary network that uses a proof of stake system to ensure that credit limit rules are being followed by its members. A lightning-network style micropayment channel mechanism could be used to implement cross-country and cross-currency exchanges over the mutual credit substrate.  ###Further reading\nMutual credit has a long history, for example the Hawala System has been in use since the 8th century throughout South Asia and Africa and has many similarities (Kagan, 2022). Several mutual credit systems are currently operating today, like the Open Credit Network, in the U.K. Sardex, in Italy. Today, the Holochain project is attempting to create a mutual credit based cryptocurrency (Aoust, 2020). They’ve even released a white paper with a similar title to this paper detailing a potential technical mechanism for such a currency (Brock \u0026 Harris-Braun), however their paper lacks the theoretical grounding in database design theory.  Conclusion\nCryptocurrency waste is here to stay. Investing astonishing amounts of capital, electricity, or other resources is the only way to maintain a limited and uniform supply of digital tokens. However, database design theory and alternative economics shows us a different path. One based in human relationships and trust instead of massive expenditures of scarce resources.  Citations\n“Ethereum USD (ETH-USD) price history \u0026 historical data,” Yahoo! Finance, 19-Mar-2022. [Online]. Available: https://finance.yahoo.com/quote/ETH-USD/history/. [Accessed: 18-Mar-2022]. M. Pease, R. Shostak, and L. Lamport, “Reaching agreement in the presence of faults,” Journal of the ACM, vol. 27, no. 2, pp. 228–234, 1980. C. Decker and R. Wattenhofer, “A fast and scalable payment network with Bitcoin duplex micropayment channels,” Lecture Notes in Computer Science, pp. 3–18, 2015. J. Poon and T. Dryja, “The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments,” Jan. 2016. https://lightning.network/lightning-network-paper.pdf J. Lind, O. Naor, I. Eyal, F. Kelbert, E. G. Sirer, and P. Pietzuch, “Teechain,” Proceedings of the 27th ACM Symposium on Operating Systems Principles, 2019. P. Bailis, A. Fekete, M. J. Franklin, A. Ghodsi, J. M. Hellerstein, and I. Stoica, “Coordination avoidance in database systems,” Proceedings of the VLDB Endowment, vol. 8, no. 3, pp. 185–196, 2014. M. Kleppmann and H. Howard, “Byzantine Eventual Consistency and the Fundamental Limits of Peer-to-Peer Databases,” arXiv, Dec. 2020. J. Kagan, “How hawala works,” Investopedia, 08-Feb-2022. [Online]. Available: https://www.investopedia.com/terms/h/hawala.asp. [Accessed: 18-Mar-2022]. P. Aoust, “A new type of cryptocurrency, as old as civilisation,” Holochain Blog, 04-Aug-2020. [Online]. Available: https://blog.holochain.org/mutual-credit-part-1-a-new-type-of-cryptocurrency-as-old-as-civilisation/. [Accessed: 18-Mar-2022].\nA. Brock and E. Harris-Braun, “Mutual credit cryptocurrencies: Beyond blockchain bottlenecks,” Ceptr. [Online]. Available: http://ceptr.org/whitepapers/mutual-credit. [Accessed: 18-Mar-2022].\n",
+  "wordCount" : "1287",
+  "inLanguage": "en",
+  "datePublished": "2022-03-18T23:59:28-07:00",
+  "dateModified": "2022-03-18T23:59:28-07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mikayla-maki.github.io/posts/term-paper/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mikayla's Project Updates",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mikayla-maki.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://mikayla-maki.github.io/" accesskey="h" title="Mikayla&#39;s Project Updates (Alt + H)">Mikayla&#39;s Project Updates</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Term Paper
+    </h1>
+    <div class="post-meta"><span title='2022-03-18 23:59:28 -0700 PDT'>March 18, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>This is a copy of the term paper I wrote for a class on internet markets.
+I&rsquo;m copying it here because it distills the last 6 months of research I&rsquo;ve
+done into my current working opinions and plans.</p>
+<p>Mikayla Maki, CS-410: Internet Markets Term Paper</p>
+<pre><code>Managing byzantine faults is a fundamental challenge for any distributed system. From the double spend problem, to sybil attacks, their existence sets hard limits on what is possible to coordinate. The Proof Of X schemes that cryptocurrencies use to secure their ledgers (e.g. work, space, and stake) use cryptographically expensive operation to make it infeasible for an attacker with less than 1/3 network share to break them. But the field of distributed database design has a solution: invariant confluence. I-confluent transactions are impervious to byzantine attacks and make expensive Proof Of X systems irrelevant. But there’s a catch; the only ledger system that can be implemented with I-confluent transactions isn’t even recognizable as a currency: unlimited mutual credit. 
+</code></pre>
+<p>###Byzantine Faults &amp; How Blockchains Manage Them</p>
+<pre><code>Cryptocurrencies, as distributed and trustless systems, are subject to Byzantine Faults. Any particular node of the network may misbehave in arbitrarily destructive ways, such as spending the same coin twice. This vulnerability is managed by first constructing a causal chain of transactions, and then attaching economic rewards for maintaining that causality. Proof of Work and Proof of Space both rely on expensive physical processes, such as generating hashes, to make it harder to rearrange causality than it is to maintain it. Proof of Stake is less ecologically destructive but still relies on locking up capital in the staking process. As of 3/18/22, it costs $94,000 (2022) to purchase the 32 ETH required to participate in Ethereum’s Proof of Stake chain. With all these resources, (Pease et al. 1980) show that these networks can tolerate no more than 1/3 of their members being Byzantine Faulty before their system guarantees are compromised. Other techniques for scaling blockchains rely on having a Proof of X substrate, and all of their problems, to fallback on (Decker &amp; Wattenhofer, 2015) (Poon &amp; Dryja, 2016) or compromise trustlessness by relying Intel’s engineers and factories to produce a perfect SGX chip (Lind et al., 2019). However, there’s an alternative to wasting money or energy securing the network: Invariant Confluent Transactions.
+</code></pre>
+<p>###I-confluence and How Synchronization Relates to Byzantine Tolerance</p>
+<pre><code>Cryptocurrencies are fundamentally a subset of the field of distributed database systems, tuned to the needs of an exceptionally hostile environment. Within this context, byzantine faults are a type of coordination problem. All of the correct peers in a network must temporarily stop processing, use some consensus mechanism to ensure that no byzantine faults have occurred and then resume accepting transactions. In non-byzantine environments, (Bailis et al. 2014) show that certain applications have a property called ‘invariant confluence’ (I-confluence) which allows certain transactions to be committed concurrently, without synchronization. I-confluence only applies when there is a database state, e.g. ’account balance’, an invariant, e.g. ‘must be &gt; 0’, and a transaction which can only generate states that maintain the given invariant, even when combined in an arbitrary order,  e.g. ‘add a whole number to account balance’. (Kleppmann &amp; Howard, 2020) show that I-confluence is necessary and sufficient for a property they call Byzantine Eventual Consistency (BEC). 
+
+
+Systems which are BEC can handle any number of byzantine faulty nodes without coordination. This is both far more resilient than cryptocurrency’s 1/3 limit, and far more efficient than buying datacenters full of GPUs. There’s only one problem: subtracting coins from ‘account balance’ is not an I-confluent transaction.  Let’s say ‘account balance’ is ₿100. database replica A preserves the ‘&gt; 0’ invariant locally and processes a -₿60 transaction.  Database replica B also preserves it locally and processes a -₿50 transaction. When merged, these two states show an account balance of -₿10,  violating the ‘account balance &gt; 0’ constraint. This is the double spend problem, and as this transaction and invariant are not I-confluent, it is impossible to implement a bitcoin-style cryptocurrency without expending massive resources to resist byzantine faulty peers.
+</code></pre>
+<h3 id="i-confluent-alternatives">I-Confluent Alternatives<a hidden class="anchor" aria-hidden="true" href="#i-confluent-alternatives">#</a></h3>
+<pre><code>But bitcoin is not the only option. If we could remove the ‘account balance &gt; 0’ invariant, then transactions would be I-confluent and would no longer need expensive synchronization. This can be done with a money system known as ‘Mutual Credit’. Bitcoin, and most other cryptocurrencies, were designed specifically to be ‘digital gold’: with a limited and uniform supply of coins for exchange. Mutual credit lifts the limited and uniform constraints, any user can generate a credit, a negative balance, and a corresponding debit, a positive balance, in someone else’s account. The total money supply is always 0 but the total liquidity expands and contracts (‘breathes’) dynamically as user’s needs change. Rather than be limited by what they have, users are constrained by their trust for each other. If Alice is untrustworthy, she effectively hyper-inflates her supply of tokens. Bob, knowing she’s untrustworthy, has no reason to accept millions of Alice’s credits until Alice repairs her books. A mutual credit database would be fast, fair, cheap, and could provide a market based means of managing a money supply. If needed, say for international travel, further constrains could be opted-into with this system to provide different kinds of guarantees. One example could be a notary network that uses a proof of stake system to ensure that credit limit rules are being followed by its members. A lightning-network style micropayment channel mechanism could be used to implement cross-country and cross-currency exchanges over the mutual credit substrate. 
+</code></pre>
+<p>###Further reading</p>
+<pre><code>Mutual credit has a long history, for example the Hawala System has been in use since the 8th century throughout South Asia and Africa and has many similarities (Kagan, 2022). Several mutual credit systems are currently operating today, like the Open Credit Network, in the U.K. Sardex, in Italy.  Today, the Holochain project is attempting to create a mutual credit based cryptocurrency (Aoust, 2020). They’ve even released a white paper with a similar title to this paper detailing a potential technical mechanism for such a currency (Brock &amp; Harris-Braun), however their paper lacks the theoretical grounding in database design theory. 
+</code></pre>
+<p>Conclusion</p>
+<pre><code>Cryptocurrency waste is here to stay. Investing astonishing amounts of capital, electricity, or other resources is the only way to maintain a limited and uniform supply of digital tokens. However, database design theory and alternative economics shows us a different path. One based in human relationships and trust instead of massive expenditures of scarce resources. 
+</code></pre>
+<p>Citations</p>
+<p>“Ethereum USD (ETH-USD) price history &amp; historical data,” Yahoo! Finance, 19-Mar-2022. [Online]. Available: <a href="https://finance.yahoo.com/quote/ETH-USD/history/">https://finance.yahoo.com/quote/ETH-USD/history/</a>. [Accessed: 18-Mar-2022].
+M. Pease, R. Shostak, and L. Lamport, “Reaching agreement in the presence of faults,” Journal of the ACM, vol. 27, no. 2, pp. 228–234, 1980.
+C. Decker and R. Wattenhofer, “A fast and scalable payment network with Bitcoin duplex micropayment channels,” Lecture Notes in Computer Science, pp. 3–18, 2015.
+J. Poon and T. Dryja, “The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments,” Jan. 2016. <a href="https://lightning.network/lightning-network-paper.pdf">https://lightning.network/lightning-network-paper.pdf</a>
+J. Lind, O. Naor, I. Eyal, F. Kelbert, E. G. Sirer, and P. Pietzuch, “Teechain,” Proceedings of the 27th ACM Symposium on Operating Systems Principles, 2019.
+P. Bailis, A. Fekete, M. J. Franklin, A. Ghodsi, J. M. Hellerstein, and I. Stoica, “Coordination avoidance in database systems,” Proceedings of the VLDB Endowment, vol. 8, no. 3, pp. 185–196, 2014.
+M. Kleppmann and H. Howard, “Byzantine Eventual Consistency and the Fundamental Limits of Peer-to-Peer Databases,” arXiv, Dec. 2020.
+J. Kagan, “How hawala works,” Investopedia, 08-Feb-2022. [Online]. Available: <a href="https://www.investopedia.com/terms/h/hawala.asp">https://www.investopedia.com/terms/h/hawala.asp</a>. [Accessed: 18-Mar-2022].
+P. Aoust, “A new type of cryptocurrency, as old as civilisation,” Holochain Blog, 04-Aug-2020. [Online]. Available: <a href="https://blog.holochain.org/mutual-credit-part-1-a-new-type-of-cryptocurrency-as-old-as-civilisation/">https://blog.holochain.org/mutual-credit-part-1-a-new-type-of-cryptocurrency-as-old-as-civilisation/</a>. [Accessed: 18-Mar-2022].</p>
+<p>A. Brock and E. Harris-Braun, “Mutual credit cryptocurrencies: Beyond blockchain bottlenecks,” Ceptr. [Online]. Available: <a href="http://ceptr.org/whitepapers/mutual-credit">http://ceptr.org/whitepapers/mutual-credit</a>. [Accessed: 18-Mar-2022].</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://mikayla-maki.github.io/">Mikayla&#39;s Project Updates</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -6,7 +6,18 @@
     <description>Recent content on Mikayla&#39;s Project Updates</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Jan 2022 15:04:11 -0800</lastBuildDate><atom:link href="https://mikayla-maki.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 23:59:28 -0700</lastBuildDate><atom:link href="https://mikayla-maki.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Term Paper</title>
+      <link>https://mikayla-maki.github.io/posts/term-paper/</link>
+      <pubDate>Fri, 18 Mar 2022 23:59:28 -0700</pubDate>
+      
+      <guid>https://mikayla-maki.github.io/posts/term-paper/</guid>
+      <description>This is a copy of the term paper I wrote for a class on internet markets. I&amp;rsquo;m copying it here because it distills the last 6 months of research I&amp;rsquo;ve done into my current working opinions and plans.
+Mikayla Maki, CS-410: Internet Markets Term Paper
+Managing byzantine faults is a fundamental challenge for any distributed system. From the double spend problem, to sybil attacks, their existence sets hard limits on what is possible to coordinate.</description>
+    </item>
+    
     <item>
       <title>P2P Browser</title>
       <link>https://mikayla-maki.github.io/posts/p2p-browser/</link>
