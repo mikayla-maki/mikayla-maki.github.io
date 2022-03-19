@@ -8,7 +8,7 @@ This is a copy of the term paper I wrote for a class on internet markets.
 I'm copying it here because it distills the last 6 months of research I've
 done into my current working opinions and plans. 
 
-### Mikayla Maki, CS-410: Internet Markets Term Paper	
+### Breaking the Chain: I-Confluence and Cryptocurrency.
 
 Managing byzantine faults is a fundamental challenge for any distributed system. From the double spend problem, to sybil attacks, their existence sets hard limits on what is possible to coordinate. The Proof Of X schemes that cryptocurrencies use to secure their ledgers (e.g. work, space, and stake) use cryptographically expensive operation to make it infeasible for an attacker with less than 1/3 network share to break them. But the field of distributed database design has a solution: invariant confluence. I-confluent transactions are impervious to byzantine attacks and make expensive Proof Of X systems irrelevant. But there’s a catch; the only ledger system that can be implemented with I-confluent transactions isn’t even recognizable as a currency: unlimited mutual credit. 
 
@@ -30,7 +30,8 @@ But bitcoin is not the only option. If we could remove the ‘account balance > 
 ### Further reading
 
 Mutual credit has a long history, for example the Hawala System has been in use since the 8th century throughout South Asia and Africa and has many similarities (Kagan, 2022). Several mutual credit systems are currently operating today, like the Open Credit Network, in the U.K. Sardex, in Italy.  Today, the Holochain project is attempting to create a mutual credit based cryptocurrency (Aoust, 2020). They’ve even released a white paper with a similar title to this paper detailing a potential technical mechanism for such a currency (Brock & Harris-Braun), however their paper lacks the theoretical grounding in database design theory. 
-Conclusion
+
+### Conclusion
 
 Cryptocurrency waste is here to stay. Investing astonishing amounts of capital, electricity, or other resources is the only way to maintain a limited and uniform supply of digital tokens. However, database design theory and alternative economics shows us a different path. One based in human relationships and trust instead of massive expenditures of scarce resources. 
 
