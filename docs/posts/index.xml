@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Mikayla&#39;s Project Updates</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Mar 2022 23:59:28 -0700</lastBuildDate><atom:link href="https://mikayla-maki.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Aug 2022 15:15:00 -0700</lastBuildDate><atom:link href="https://mikayla-maki.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Implications of the Grant Matcher Puzzle</title>
+      <link>https://mikayla-maki.github.io/posts/grant-matcher/</link>
+      <pubDate>Sun, 21 Aug 2022 15:15:00 -0700</pubDate>
+      
+      <guid>https://mikayla-maki.github.io/posts/grant-matcher/</guid>
+      <description>I&amp;rsquo;ve been getting into Object Capabilites recently and it&amp;rsquo;s been immense fun finding people solving all the same problems I&amp;rsquo;ve been thinking about for the last year. One of the more interesting topics is the &amp;lsquo;Grant Matcher&amp;rsquo; puzzle and it&amp;rsquo;s implications for what kinds of cooperation are possible. Here&amp;rsquo;s the original full text of the problem, but I&amp;rsquo;ll be restating it below.
+OCap First a quick Object Capabilities primer, if you know what OCap is just skip to the next section.</description>
+    </item>
+    
     <item>
       <title>Term Paper</title>
       <link>https://mikayla-maki.github.io/posts/term-paper/</link>

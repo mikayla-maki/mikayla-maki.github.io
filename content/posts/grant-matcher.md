@@ -1,6 +1,6 @@
 ---
 title: "The Implications of the Grant Matcher Puzzle"
-date: 2022-08-21T15:30:00-07:00
+date: 2022-08-21T15:15:00-07:00
 draft: false
 ---
 
@@ -23,35 +23,34 @@ Let's imagine a world with the following Objects:
 
 The Grant Matcher's job is simple: Check if both Alice and Bob donated $10 to it. If they both did, send their combined money ($20) to the Charity. If they didn't, refund their money. Alice and Bob do not trust each other but they do trust the Grant Matcher to perform it's duties. Finally, Alice and Both both have a reference to the Grant Matcher and a reference to the charity. Here's a diagram of the setup:
 
-    !(Black, thin arrows denote references, circles denote objects. Access is authority in Object Capabilities, so both Alice and Bob can talk to the grant matcher and the Charity, but not to each other.)[/static/grant-matcher/initial.png]
+
+{{< figure src="/grant-matcher/initial.png" caption="Black, thin arrows denote references, circles denote objects. Access is authority in Object Capabilities, so both Alice and Bob can talk to the grant matcher and the Charity, but not to each other." >}}
 
  Here's how it should go, Alice and Bob send the Grant Matcher their cash, the grant matcher checks that their donations match, and the grant matcher sends their money on:
- 
-    !(1. Alice sends $10 to the Grant Matcher. 2. Bob sends $10 to the Grant Matcher. 3. The Grant Matcher donates their $20 to the Charity)[/static/grant-matcher/success.png]
+
+{{< figure src="/grant-matcher/success.png" caption="First, Alice sends $10 to the Grant Matcher. Then Bob sends $10 to the Grant Matcher. Then the Grant Matcher donates their $20 to the Charity" >}}
 
 But there's a problem with this picture: messages can only be sent when there's a reference to an Object, and according to the setup to this puzzle the Grant Matcher doesn't have a reference to the Charity. Let's fix this by adding references to the messages that Alice and Bob send:
 
-    !(1. Alice now sends $10 to the Grant Matcher and a reference to the charity. 2. Bob now sends $10 to the Grant Matcher and a reference to the charity.)[/static/grant-matcher/refs.png]
-
+{{< figure src="/grant-matcher/refs.png" caption="First, Alice now sends $10 to the Grant Matcher and a reference to the charity. Then Bob sends $10 to the Grant Matcher and a reference to the charity." >}}
 
 But here's the crux of the problem: how does the grant matcher know if these references are equal? To preserve referential transparency, the Grant Matcher must ask both references for their identity. Alice can use this fact to insert a reference to a Fake Charity:
 
-
-    !(1. Alice now sends $10 to the Grant Matcher and a reference to a Fake Charity object. 2. Bob now sends $10 to the Grant Matcher and a reference to the real charity. The grant matcher then sends a message to both the fake and real charity asking for their identity. The fake charity forwards this message on to the real Charity)[/static/grant-matcher/fake-attack.png]
+{{< figure src="/grant-matcher/fake-attack.png" caption="Alice now sends $10 to the Grant Matcher and a reference to a Fake Charity object. Then Bob sends $10 to the Grant Matcher and a reference to the real charity. The grant matcher then sends a message to both the fake and real charity asking for their identity. The fake charity forwards this message on to the real Charity" >}}
 
 When the Grant Matcher tries to ask for the charity ID, Alice's Fake Charity can forward the message on to the real charity, and then return the results to the grant matcher:
 
-    !(The same image as before, but now annotated with the response from the Charity, 'KEQD', going to both the Grant Matcher and the Fake Charity. The Fake Charity then returns the same identifier, 'KEQD', to the Grant Matcher. The grant matcher then thinks 'Both references say they're the same thing, great! These references must match.')[/static/grant-matcher/message-forwarding.png]
+{{< figure src="/grant-matcher/message-forwarding.png" caption="The same image as before, but now annotated with the response from the Charity, 'KEQD', going to both the Grant Matcher and the Fake Charity. The Fake Charity then returns the same identifier, 'KEQD', to the Grant Matcher. The grant matcher then thinks 'Both references say they're the same thing, great! These references must match.'" >}}
 
 The grant matcher then picks Alice's reference to send the donation on and Alice's fake charity sees that this message has the money on it, and instead sends it to Alice!
 
-    !(The grant matcher sends a message to donate $20 to Alice's fake charity, and the fake charity forwards that Message to Alice, successfully stealing Bob's money)[/static/grant-matcher/fake-steals.png]
+{{< figure src="/grant-matcher/fake-steals.png" caption="The grant matcher sends a message to donate $20 to Alice's fake charity, and the fake charity forwards that Message to Alice, successfully stealing Bob's money" >}}
 
 So we're at an impasse. Capabilities require referential transparency to provide their value, but referential transparency creates a serious security problem. 
 
 ### Existing Solutions
 
-From what I've heard, there are two standard solutions to this problem: abandon referential transparency and use pointer level equality check and use a sealer/unsealer pair. 
+From what I've learned, there are two standard solutions to this problem: abandon referential transparency and use reference equality check and use a sealer/unsealer pair. 
 
 Reference equality requires that Bob and Alice have the exact same reference, and thus the exact same authority, to the Charity in order to use the Grant Matcher. This is a massive restriction and just pushes the problem onto Alice and Bob to solve, how are they going to agree on which of their two references to use if they don't trust each other? Note that this also requires Alice and Bob to communicate in order to make sure they have the *exact same* reference.
 
@@ -67,7 +66,7 @@ The problem with this situation was that, according to the puzzle setup, the Gra
 
 So let's break that second authority out and see what happens. In order for the Grant Matcher to know where to donate the money, it needs to be created with a trusted reference to the correct Charity to donate to. If Alice and Bob don't trust each other, or each other's references, the only entity which can provide a trusted reference to the Charity is the Charity itself[^1]. This requires that Alice and Bob trust the Charity to behave correctly. Note that the original puzzle statement explicitly removes the possibility of trusting the Charity:
 
-    >"The Grant Matcher pattern, however, is supposed to bring about a particular kind of cooperation between Alice and Dana, requiring **only** that they both trust the Grant Matcher and a common monetary system." Emphasis added. [From erights.org](http://www.erights.org/elib/equality/grant-matcher/index.html)
+>"The Grant Matcher pattern, however, is supposed to bring about a particular kind of cooperation between Alice and Dana, requiring **only** that they both trust the Grant Matcher and a common monetary system." Emphasis added. [From erights.org](http://www.erights.org/elib/equality/grant-matcher/index.html)
     
 However, the sealer/unsealer pair solution to the Grant Matcher puzzle requires a trustworthy Charity, and further I can't conceive of a scenario where Alice and Bob both trust the Charity with their money, but don't trust it to behave correctly (ignoring technical glitches). Given these two statements, I consider adding a trustworthy Charity to the initial conditions to be an acceptable modification to the rules of the puzzle. 
 
