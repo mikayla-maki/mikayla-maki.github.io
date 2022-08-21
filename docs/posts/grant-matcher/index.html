@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>The Implications of the Grant Matcher Puzzle | Mikayla&#39;s Project Updates</title>
+<meta name="keywords" content="" />
+<meta name="description" content="I&rsquo;ve been getting into Object Capabilites recently and it&rsquo;s been immense fun finding people solving all the same problems I&rsquo;ve been thinking about for the last year. One of the more interesting topics is the &lsquo;Grant Matcher&rsquo; puzzle and it&rsquo;s implications for what kinds of cooperation are possible. Here&rsquo;s the original full text of the problem, but I&rsquo;ll be restating it below.
+OCap First a quick Object Capabilities primer, if you know what OCap is just skip to the next section.">
+<meta name="author" content="">
+<link rel="canonical" href="https://mikayla-maki.github.io/posts/grant-matcher/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.6f60056d44d3f7eb69a4bc6c332b59960f3a995802bded244750232f33713c49.css" integrity="sha256-b2AFbUTT9&#43;tppLxsMytZlg86mVgCve0kR1AjLzNxPEk=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://mikayla-maki.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://mikayla-maki.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://mikayla-maki.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://mikayla-maki.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://mikayla-maki.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.89.2" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="The Implications of the Grant Matcher Puzzle" />
+<meta property="og:description" content="I&rsquo;ve been getting into Object Capabilites recently and it&rsquo;s been immense fun finding people solving all the same problems I&rsquo;ve been thinking about for the last year. One of the more interesting topics is the &lsquo;Grant Matcher&rsquo; puzzle and it&rsquo;s implications for what kinds of cooperation are possible. Here&rsquo;s the original full text of the problem, but I&rsquo;ll be restating it below.
+OCap First a quick Object Capabilities primer, if you know what OCap is just skip to the next section." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mikayla-maki.github.io/posts/grant-matcher/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-18T23:59:28-07:00" />
+<meta property="article:modified_time" content="2022-03-18T23:59:28-07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Implications of the Grant Matcher Puzzle"/>
+<meta name="twitter:description" content="I&rsquo;ve been getting into Object Capabilites recently and it&rsquo;s been immense fun finding people solving all the same problems I&rsquo;ve been thinking about for the last year. One of the more interesting topics is the &lsquo;Grant Matcher&rsquo; puzzle and it&rsquo;s implications for what kinds of cooperation are possible. Here&rsquo;s the original full text of the problem, but I&rsquo;ll be restating it below.
+OCap First a quick Object Capabilities primer, if you know what OCap is just skip to the next section."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://mikayla-maki.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "The Implications of the Grant Matcher Puzzle",
+      "item": "https://mikayla-maki.github.io/posts/grant-matcher/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Implications of the Grant Matcher Puzzle",
+  "name": "The Implications of the Grant Matcher Puzzle",
+  "description": "I\u0026rsquo;ve been getting into Object Capabilites recently and it\u0026rsquo;s been immense fun finding people solving all the same problems I\u0026rsquo;ve been thinking about for the last year. One of the more interesting topics is the \u0026lsquo;Grant Matcher\u0026rsquo; puzzle and it\u0026rsquo;s implications for what kinds of cooperation are possible. Here\u0026rsquo;s the original full text of the problem, but I\u0026rsquo;ll be restating it below.\nOCap First a quick Object Capabilities primer, if you know what OCap is just skip to the next section.",
+  "keywords": [
+    
+  ],
+  "articleBody": "I’ve been getting into Object Capabilites recently and it’s been immense fun finding people solving all the same problems I’ve been thinking about for the last year. One of the more interesting topics is the ‘Grant Matcher’ puzzle and it’s implications for what kinds of cooperation are possible. Here’s the original full text of the problem, but I’ll be restating it below.\nOCap First a quick Object Capabilities primer, if you know what OCap is just skip to the next section. Object Capabilities encode authority into object references. Having a reference to an Object is equivalent to having the authority to access that object in all ways that object allows. Contrast this with the more typical Access Control List model, where it’s possible to maintain a reference to something but not have permissions to access it. It’s a bit like the difference between file names with permissions (which bundle in a concept of a system wide namespace), and file descriptors. If you have a file descriptor, you know that someone, at some point, had the authority to open this file, and now you can do whatever this file descriptor is allowed to do (Append only, read only, read and write, etc.). Crucially, your code never had to worry about how this file descriptor is created, all of that complexity is encapsulated by the existence of the file descriptor. Contrast this with handing around file names. Names require that all parts of your codebase share the same file namespace (unlikely in distributed systems) and the simple existence of a filename doesn’t provide any information about whether this code can (or should) use it. Using file names instead of descriptors breaks encapsulation by forcing all of your code to deal this complexity, every time.\nOne of the core benefits of capabilities, and the one relevant to the Grant Matcher, is that they can be composed with Objects to create new behavior. One way this can happen is attentuation, making a capbility ‘smaller’ before handing it on. Taking the file descriptor example above, imagine being given a ‘read-write’ file descriptor, and being able to wrap it in a ‘read-only’ handle that you then pass to another part of the system. Another way is through transparent references, which allow you to augment your existing capabilities with new behaviors. Again with file descriptors, it’s like being able to wrap a file descriptor with a boolean that revokes access to the file, without touching the underlying OS file descriptor, while still appearing to be a plain old file descriptor to whoever you’re handing it to. The Grant Matcher puzzle puts these benefits to the test.\nThe Grant Matcher Puzzle Let’s imagine a world with the following Objects:\n A Charity Alice Bob A Grant Matcher  The Grant Matcher’s job is simple: Check if both Alice and Bob donated $10 to it. If they both did, send their combined money ($20) to the Charity. If they didn’t, refund their money. Alice and Bob do not trust each other but they do trust the Grant Matcher to perform it’s duties. Finally, Alice and Both both have a reference to the Grant Matcher and a reference to the charity. Here’s a diagram of the setup:\n!(Black, thin arrows denote references, circles denote objects. Access is authority in Object Capabilities, so both Alice and Bob can talk to the grant matcher and the Charity, but not to each other.)[/static/grant-matcher/initial.png]\nHere’s how it should go, Alice and Bob send the Grant Matcher their cash, the grant matcher checks that their donations match, and the grant matcher sends their money on:\n!(1. Alice sends $10 to the Grant Matcher. 2. Bob sends $10 to the Grant Matcher. 3. The Grant Matcher donates their $20 to the Charity)[/static/grant-matcher/success.png]\nBut there’s a problem with this picture: messages can only be sent when there’s a reference to an Object, and according to the setup to this puzzle the Grant Matcher doesn’t have a reference to the Charity. Let’s fix this by adding references to the messages that Alice and Bob send:\n!(1. Alice now sends $10 to the Grant Matcher and a reference to the charity. 2. Bob now sends $10 to the Grant Matcher and a reference to the charity.)[/static/grant-matcher/refs.png]\nBut here’s the crux of the problem: how does the grant matcher know if these references are equal? To preserve referential transparency, the Grant Matcher must ask both references for their identity. Alice can use this fact to insert a reference to a Fake Charity:\n!(1. Alice now sends $10 to the Grant Matcher and a reference to a Fake Charity object. 2. Bob now sends $10 to the Grant Matcher and a reference to the real charity. The grant matcher then sends a message to both the fake and real charity asking for their identity. The fake charity forwards this message on to the real Charity)[/static/grant-matcher/fake-attack.png]\nWhen the Grant Matcher tries to ask for the charity ID, Alice’s Fake Charity can forward the message on to the real charity, and then return the results to the grant matcher:\n!(The same image as before, but now annotated with the response from the Charity, ‘KEQD’, going to both the Grant Matcher and the Fake Charity. The Fake Charity then returns the same identifier, ‘KEQD’, to the Grant Matcher. The grant matcher then thinks ‘Both references say they’re the same thing, great! These references must match.')[/static/grant-matcher/message-forwarding.png]\nThe grant matcher then picks Alice’s reference to send the donation on and Alice’s fake charity sees that this message has the money on it, and instead sends it to Alice!\n!(The grant matcher sends a message to donate $20 to Alice’s fake charity, and the fake charity forwards that Message to Alice, successfully stealing Bob’s money)[/static/grant-matcher/fake-steals.png]\nSo we’re at an impasse. Capabilities require referential transparency to provide their value, but referential transparency creates a serious security problem.\nExisting Solutions From what I’ve heard, there are two standard solutions to this problem: abandon referential transparency and use pointer level equality check and use a sealer/unsealer pair.\nReference equality requires that Bob and Alice have the exact same reference, and thus the exact same authority, to the Charity in order to use the Grant Matcher. This is a massive restriction and just pushes the problem onto Alice and Bob to solve, how are they going to agree on which of their two references to use if they don’t trust each other? Note that this also requires Alice and Bob to communicate in order to make sure they have the exact same reference.\nThe other solution is to use a sealer where the charity holds the corresponding unsealer. Sealers allow people to put something in a box that only the unsealer can open. If both Alice and Bob seal their money with the Charity’s sealer, then there’s no point to stealing as Alice couldn’t retrieve the money even if she did pull off a successful attack. Note that this doesn’t actually solve the grant matcher puzzle either, Bob still lost his money, it just takes away Alice’s incentive to steal. Note that this requires trust in the Charity’s behavior.\nMy Solution So now that we’ve seen the problem and the solutions, let’s take a step back, why does this problem exist at all? I propose that in the setup of the Grant Matcher puzzle, there is a violation of the Principle of Least Authority that causes all of these issues. Let’s go back to that successful grant match diagram:\n!(1. Alice sends $10 to the Grant Matcher. 2. Bob sends $10 to the Grant Matcher. 3. The Grant Matcher donates their $20 to the Charity)[/static/grant-matcher/success.png]\nThe problem with this situation was that, according to the puzzle setup, the Grant Matcher doesn’t know about the Charity. Because it doesn’t know about the charity, the Grant Matcher must be given both the authority to check matching donations, as well as the authority to resolve the two references into a single ‘true reference’. It’s this second authority which breaks encapsulation, forces the Grant Matcher to use a raw reference equality check, and make Alice and Bob unable to cooperate.\nSo let’s break that second authority out and see what happens. In order for the Grant Matcher to know where to donate the money, it needs to be created with a trusted reference to the correct Charity to donate to. If Alice and Bob don’t trust each other, or each other’s references, the only entity which can provide a trusted reference to the Charity is the Charity itself1. This requires that Alice and Bob trust the Charity to behave correctly. Note that the original puzzle statement explicitly removes the possibility of trusting the Charity:\n\"The Grant Matcher pattern, however, is supposed to bring about a particular kind of cooperation between Alice and Dana, requiring **only** that they both trust the Grant Matcher and a common monetary system.\" Emphasis added. [From erights.org](http://www.erights.org/elib/equality/grant-matcher/index.html)  However, the sealer/unsealer pair solution to the Grant Matcher puzzle requires a trustworthy Charity, and further I can’t conceive of a scenario where Alice and Bob both trust the Charity with their money, but don’t trust it to behave correctly (ignoring technical glitches). Given these two statements, I consider adding a trustworthy Charity to the initial conditions to be an acceptable modification to the rules of the puzzle.\nBack to the puzzle. Intially there are only Alice, Bob, and a Charity. Alice and Bob use their references to ask the Charity to create a grant matcher, it gives them references to a Grant Matcher that the Charity has created. This Grant Matcher contains a reference back to the Charity:\n!(In this new initial state, Alice and Bob both ask the Charity for a new Grant Matcher. The Charity instantiates a Grant Matcher with a reference to the charity)[/static/grant-matcher/new-intial.png]\nNow there isn’t even a puzzle. Alice and Bob can’t forward references to the Grant Matcher (it only cares about their money) and so Alice can’t launch her attack on the Grant Matcher. This also preserves referential transparency, as Alice and Bob’s references to the Charity, and their references to the Grant Matcher, can be behind as many different kinds of references as they please. All that matters is that the Charity is capable of receiving Alice and Bob’s messages, is capable of giving them a reference to the new grant matcher, and the Grant Matcher is eventually capable of being called twice with the money.\nSuccess! We’ve eliminated reference equality checks! Or have we?\nThe Return of the Reference Equality Operator An issue with the example above is that the Charity must somehow know who to send which references. We can imagine a scenario where there are thousands of people all simultaneously starting and resolving Grant Matcher sessions on this Charity. the Charity will need some identifier associated with both Alice and Bob which uniquely identifies their session. There are at least two different ways this could work:\n  Name-based. Alice provides a name for Bob when requesting a session: ‘Start Grant Matcher with Bob, from Alice’. Alice then tells Bob, through a third party, that she used the name ‘Alice’ for herself and ‘Bob’ for him. Bob then sends the reverse message: ‘Start Grant Matcher with Alice, from Bob’. The strings ‘Alice’ and ‘Bob’ are raw references to these two objects in the namespace of ‘all users that could start grant matcher sessions with this Charity’ and so the Charity must do a raw reference equality check with these strings to create their session.\n  ID-based. Alice sends a ‘Start Grant Matcher Session’ message to the charity. The charity returns a session ID to Alice. Alice hands this session ID to Bob through a third party, and Bob sends a ‘Join Grant Matcher Session with ID’ to the charity. The session ID is a raw reference in the namespace of ‘current active grant matcher sessions’ and so the Charity must do a raw reference equality check with this session ID against it’s list of existing sessions.\n  Both of these solutions require Alice and Bob to coordinate with each other and the Charity in order to receive a grant matcher which only Alice and Bob have a reference to. This is the same kind of coordination that would be required to ensure that Alice and Bob have the exact same reference to a Charity in the original puzzle, so I consider this acceptable.\nBut the coordination required to create either of these two solutions is much smaller and much less dangerous to both Bob and Alice. Neither of them need to leak their references to the Charity with each other in order to ensure that the Grant Matcher will work. Further, the same analysis can be done to compare the two session based solutions above. The name-based solution is vulnerable to hijacking by a third party which could guess them and requires Alice and Bob to leak their private names to each other. The ID-based solution doesn’t have either of these problems. The IDs are opaque bit streams that carry no information about Alice to Bob, and Bob doesn’t have to trust that Alice was honest about her name. All he has to do is trust the Charity to function correctly.\nThis suggests two methods for analyzing situations where raw-reference equality is needed:\n Consider the namespace that these raw references will be a part of and how this intersects with the authority provided by capabilities. Who controls it? In the reference equality solution, it’s the E language. In the named-based sessions, it’s the users. In the ID-based solution, it’s The Charity. Because trust flows from the Charity and to Alice and Bob, the session-ID based solution is the best of the ones here. Consider what raw reference equality means semantically in your application. If we had gone with the name-based solution, then our reference equality check would have been required to normalize capital letters, strip out white space, and be locale aware to be resilient. The session ID solution is simpler, as raw reference equality is equivalent to bit equality.  But let’s get back to POLA, notice that now the Charity is violating POLA. We’ve managed to push the ‘resolution of references’ problem into the much smaller ‘resolution of sessions’ problem but in doing so now the Charity has to spend a lot of time and effort maintaining all this reference namespace resolution infrastructure. What if we spun that out into it’s own Object?\nWe could imagine a ‘Charity Namespace’ object which maintains this kind of session infrastructure, as well as lists of raw charity IDs and their corresponding capability-references. This namespace service could use confinement to instantiate arbitrary objects (e.g. a Grant Matcher) which all session participants know refers to the same backing raw Charity Id.\nA system like this would also provide an intuitive interface between the world of simple human identifiers and rich OCap references. Part of maintaining your computer system involves maintaining your own name resolver and running your programs with the capabilities provided by that resolver and strings provided by the user. These could even be composed together further, because it’s all just capability references in the end!\nConclusion The Grant Matcher Puzzle is fundamentally flawed because it’s setup violates POLA and it’s resolution obscures the underlying dynamics of raw reference equality. All solutions that prevent Bob from losing his money require violating 2 premises of the puzzle: no communication between Alice and Bob and no trust in the Charity. But having a resilient, safe solution to this puzzle does not require the violation of referential transparency.\nFixing the puzzle to more closely match how trust works in real life illustrates an interesting problem: How do two mutually defensive objects agree on their relationship to a third Object? I propose that the solution to this kind of problem requires the creation of a mutually trusted namespace object, through which these kinds of naming conflicts can be robustly resolved. We may never be rid of a reference equality operator, but at least we don’t need to use the reference equality operator.\n  Actually, not quite, but I’ll get to that in the next section ↩︎\n   ",
+  "wordCount" : "2688",
+  "inLanguage": "en",
+  "datePublished": "2022-03-18T23:59:28-07:00",
+  "dateModified": "2022-03-18T23:59:28-07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mikayla-maki.github.io/posts/grant-matcher/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mikayla's Project Updates",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mikayla-maki.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://mikayla-maki.github.io/" accesskey="h" title="Mikayla&#39;s Project Updates (Alt + H)">Mikayla&#39;s Project Updates</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      The Implications of the Grant Matcher Puzzle
+    </h1>
+    <div class="post-meta"><span title='2022-03-18 23:59:28 -0700 PDT'>March 18, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>I&rsquo;ve been getting into Object Capabilites recently and it&rsquo;s been immense fun finding people solving all the same problems I&rsquo;ve been thinking about for the last year. One of the more interesting topics is the &lsquo;Grant Matcher&rsquo; puzzle and it&rsquo;s implications for what kinds of cooperation are possible. <a href="http://www.erights.org/elib/equality/grant-matcher/index.html">Here&rsquo;s the original full text of the problem</a>, but I&rsquo;ll be restating it below.</p>
+<h3 id="ocap">OCap<a hidden class="anchor" aria-hidden="true" href="#ocap">#</a></h3>
+<p>First a quick Object Capabilities primer, if you know what OCap is just skip to the next section. Object Capabilities encode authority into object references. Having a reference to an Object is equivalent to having the authority to access that object in all ways that object allows. Contrast this with the more typical Access Control List model, where it&rsquo;s possible to maintain a reference to something but not have permissions to access it. It&rsquo;s a bit like the difference between file names with permissions (which bundle in a concept of a system wide namespace), and file descriptors. If you have a file descriptor, you know that someone, at some point, had the authority to open this file, and now you can do whatever this file descriptor is allowed to do (Append only, read only, read and write, etc.). Crucially, your code never had to worry about how this file descriptor is created, all of that complexity is encapsulated by the existence of the file descriptor. Contrast this with handing around file names. Names require that all parts of your codebase share the same file namespace (unlikely in distributed systems) and the simple existence of a filename doesn&rsquo;t provide any information about whether this code can (or should) use it. Using file names instead of descriptors breaks encapsulation by forcing all of your code to deal this complexity, every time.</p>
+<p>One of the core benefits of capabilities, and the one relevant to the Grant Matcher, is that they can be composed with Objects to create new behavior. One way this can happen is attentuation, making a capbility &lsquo;smaller&rsquo; before handing it on. Taking the file descriptor example above, imagine being given a &lsquo;read-write&rsquo; file descriptor, and being able to wrap it in a &lsquo;read-only&rsquo; handle that you then pass to another part of the system. Another way is through transparent references, which allow you to augment your existing capabilities with new behaviors. Again with file descriptors, it&rsquo;s like being able to wrap a file descriptor with a boolean that revokes access to the file, without touching the underlying OS file descriptor, while still appearing to be a plain old file descriptor to whoever you&rsquo;re handing it to. The Grant Matcher puzzle puts these benefits to the test.</p>
+<h3 id="the-grant-matcher-puzzle">The Grant Matcher Puzzle<a hidden class="anchor" aria-hidden="true" href="#the-grant-matcher-puzzle">#</a></h3>
+<p>Let&rsquo;s imagine a world with the following Objects:</p>
+<ul>
+<li>A Charity</li>
+<li>Alice</li>
+<li>Bob</li>
+<li>A Grant Matcher</li>
+</ul>
+<p>The Grant Matcher&rsquo;s job is simple: Check if both Alice and Bob donated $10 to it. If they both did, send their combined money ($20) to the Charity. If they didn&rsquo;t, refund their money. Alice and Bob do not trust each other but they do trust the Grant Matcher to perform it&rsquo;s duties. Finally, Alice and Both both have a reference to the Grant Matcher and a reference to the charity. Here&rsquo;s a diagram of the setup:</p>
+<p>!(Black, thin arrows denote references, circles denote objects. Access is authority in Object Capabilities, so both Alice and Bob can talk to the grant matcher and the Charity, but not to each other.)[/static/grant-matcher/initial.png]</p>
+<p>Here&rsquo;s how it should go, Alice and Bob send the Grant Matcher their cash, the grant matcher checks that their donations match, and the grant matcher sends their money on:</p>
+<p>!(1. Alice sends $10 to the Grant Matcher. 2. Bob sends $10 to the Grant Matcher. 3. The Grant Matcher donates their $20 to the Charity)[/static/grant-matcher/success.png]</p>
+<p>But there&rsquo;s a problem with this picture: messages can only be sent when there&rsquo;s a reference to an Object, and according to the setup to this puzzle the Grant Matcher doesn&rsquo;t have a reference to the Charity. Let&rsquo;s fix this by adding references to the messages that Alice and Bob send:</p>
+<p>!(1. Alice now sends $10 to the Grant Matcher and a reference to the charity. 2. Bob now sends $10 to the Grant Matcher and a reference to the charity.)[/static/grant-matcher/refs.png]</p>
+<p>But here&rsquo;s the crux of the problem: how does the grant matcher know if these references are equal? To preserve referential transparency, the Grant Matcher must ask both references for their identity. Alice can use this fact to insert a reference to a Fake Charity:</p>
+<p>!(1. Alice now sends $10 to the Grant Matcher and a reference to a Fake Charity object. 2. Bob now sends $10 to the Grant Matcher and a reference to the real charity. The grant matcher then sends a message to both the fake and real charity asking for their identity. The fake charity forwards this message on to the real Charity)[/static/grant-matcher/fake-attack.png]</p>
+<p>When the Grant Matcher tries to ask for the charity ID, Alice&rsquo;s Fake Charity can forward the message on to the real charity, and then return the results to the grant matcher:</p>
+<p>!(The same image as before, but now annotated with the response from the Charity, &lsquo;KEQD&rsquo;, going to both the Grant Matcher and the Fake Charity. The Fake Charity then returns the same identifier, &lsquo;KEQD&rsquo;, to the Grant Matcher. The grant matcher then thinks &lsquo;Both references say they&rsquo;re the same thing, great! These references must match.')[/static/grant-matcher/message-forwarding.png]</p>
+<p>The grant matcher then picks Alice&rsquo;s reference to send the donation on and Alice&rsquo;s fake charity sees that this message has the money on it, and instead sends it to Alice!</p>
+<p>!(The grant matcher sends a message to donate $20 to Alice&rsquo;s fake charity, and the fake charity forwards that Message to Alice, successfully stealing Bob&rsquo;s money)[/static/grant-matcher/fake-steals.png]</p>
+<p>So we&rsquo;re at an impasse. Capabilities require referential transparency to provide their value, but referential transparency creates a serious security problem.</p>
+<h3 id="existing-solutions">Existing Solutions<a hidden class="anchor" aria-hidden="true" href="#existing-solutions">#</a></h3>
+<p>From what I&rsquo;ve heard, there are two standard solutions to this problem: abandon referential transparency and use pointer level equality check and use a sealer/unsealer pair.</p>
+<p>Reference equality requires that Bob and Alice have the exact same reference, and thus the exact same authority, to the Charity in order to use the Grant Matcher. This is a massive restriction and just pushes the problem onto Alice and Bob to solve, how are they going to agree on which of their two references to use if they don&rsquo;t trust each other? Note that this also requires Alice and Bob to communicate in order to make sure they have the <em>exact same</em> reference.</p>
+<p>The other solution is to use a sealer where the charity holds the corresponding unsealer. Sealers allow people to put something in a box that only the unsealer can open. If both Alice and Bob seal their money with the Charity&rsquo;s sealer, then there&rsquo;s no point to stealing as Alice couldn&rsquo;t retrieve the money even if she did pull off a successful attack. Note that this doesn&rsquo;t actually solve the grant matcher puzzle either, Bob still lost his money, it just takes away Alice&rsquo;s incentive to steal. Note that this requires trust in the Charity&rsquo;s behavior.</p>
+<h3 id="my-solution">My Solution<a hidden class="anchor" aria-hidden="true" href="#my-solution">#</a></h3>
+<p>So now that we&rsquo;ve seen the problem and the solutions, let&rsquo;s take a step back, why does this problem exist at all? I propose that in the setup of the Grant Matcher puzzle, there is a violation of the Principle of Least Authority that causes all of these issues. Let&rsquo;s go back to that successful grant match diagram:</p>
+<p>!(1. Alice sends $10 to the Grant Matcher. 2. Bob sends $10 to the Grant Matcher. 3. The Grant Matcher donates their $20 to the Charity)[/static/grant-matcher/success.png]</p>
+<p>The problem with this situation was that, according to the puzzle setup, the Grant Matcher doesn&rsquo;t know about the Charity. Because it doesn&rsquo;t know about the charity, the Grant Matcher must be given both the authority to check matching donations, as well as the authority to resolve the two references into a single &lsquo;true reference&rsquo;. It&rsquo;s this second authority which breaks encapsulation, forces the Grant Matcher to use a raw reference equality check, and make Alice and Bob unable to cooperate.</p>
+<p>So let&rsquo;s break that second authority out and see what happens. In order for the Grant Matcher to know where to donate the money, it needs to be created with a trusted reference to the correct Charity to donate to. If Alice and Bob don&rsquo;t trust each other, or each other&rsquo;s references, the only entity which can provide a trusted reference to the Charity is the Charity itself<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. This requires that Alice and Bob trust the Charity to behave correctly. Note that the original puzzle statement explicitly removes the possibility of trusting the Charity:</p>
+<pre><code>&gt;&quot;The Grant Matcher pattern, however, is supposed to bring about a particular kind of cooperation between Alice and Dana, requiring **only** that they both trust the Grant Matcher and a common monetary system.&quot; Emphasis added. [From erights.org](http://www.erights.org/elib/equality/grant-matcher/index.html)
+</code></pre>
+<p>However, the sealer/unsealer pair solution to the Grant Matcher puzzle requires a trustworthy Charity, and further I can&rsquo;t conceive of a scenario where Alice and Bob both trust the Charity with their money, but don&rsquo;t trust it to behave correctly (ignoring technical glitches). Given these two statements, I consider adding a trustworthy Charity to the initial conditions to be an acceptable modification to the rules of the puzzle.</p>
+<p>Back to the puzzle. Intially there are only Alice, Bob, and a Charity. Alice and Bob use their references to ask the Charity to create a grant matcher, it gives them references to a Grant Matcher that the Charity has created. This Grant Matcher contains a reference back to the Charity:</p>
+<p>!(In this new initial state, Alice and Bob both ask the Charity for a new Grant Matcher. The Charity instantiates a Grant Matcher with a reference to the charity)[/static/grant-matcher/new-intial.png]</p>
+<p>Now there isn&rsquo;t even a puzzle. Alice and Bob can&rsquo;t forward references to the Grant Matcher (it only cares about their money) and so Alice can&rsquo;t launch her attack on the Grant Matcher. This also preserves referential transparency, as Alice and Bob&rsquo;s references to the Charity, and their references to the Grant Matcher, can be behind as many different kinds of references as they please. All that matters is that the Charity is capable of receiving Alice and Bob&rsquo;s messages, is capable of giving them a reference to the new grant matcher, and the Grant Matcher is eventually capable of being called twice with the money.</p>
+<p>Success! We&rsquo;ve eliminated reference equality checks! Or have we?</p>
+<h3 id="the-return-of-the-reference-equality-operator">The Return of the Reference Equality Operator<a hidden class="anchor" aria-hidden="true" href="#the-return-of-the-reference-equality-operator">#</a></h3>
+<p>An issue with the example above is that the Charity must somehow know who to send which references. We can imagine a scenario where there are thousands of people all simultaneously starting and resolving Grant Matcher sessions on this Charity. the Charity will need some identifier associated with both Alice and Bob which uniquely identifies their session. There are at least two different ways this could work:</p>
+<ol>
+<li>
+<p>Name-based. Alice provides a name for Bob when requesting a session: &lsquo;Start Grant Matcher with Bob, from Alice&rsquo;. Alice then tells Bob, through a third party, that she used the name &lsquo;Alice&rsquo; for herself and &lsquo;Bob&rsquo; for him. Bob then sends the reverse message: &lsquo;Start Grant Matcher with Alice, from Bob&rsquo;. The strings &lsquo;Alice&rsquo; and &lsquo;Bob&rsquo; are raw references to these two objects in the namespace of &lsquo;all users that could start grant matcher sessions with this Charity&rsquo; and so the Charity must do a raw reference equality check with these strings to create their session.</p>
+</li>
+<li>
+<p>ID-based. Alice sends a &lsquo;Start Grant Matcher Session&rsquo; message to the charity. The charity returns a session ID to Alice. Alice hands this session ID to Bob through a third party, and Bob sends a &lsquo;Join Grant Matcher Session with ID&rsquo; to the charity. The session ID is a raw reference in the namespace of &lsquo;current active grant matcher sessions&rsquo; and so the Charity must do a raw reference equality check with this session ID against it&rsquo;s list of existing sessions.</p>
+</li>
+</ol>
+<p>Both of these solutions require Alice and Bob to coordinate with each other and the Charity in order to receive a grant matcher which only Alice and Bob have a reference to. This is the same kind of coordination that would be required to ensure that Alice and Bob have the exact same reference to a Charity in the original puzzle, so I consider this acceptable.</p>
+<p>But the coordination required to create either of these two solutions is much smaller and much less dangerous to both Bob and Alice. Neither of them need to leak their references to the Charity with each other in order to ensure that the Grant Matcher will work. Further, the same analysis can be done to compare the two session based solutions above. The name-based solution is vulnerable to hijacking by a third party which could guess them and requires Alice and Bob to leak their private names to each other. The ID-based solution doesn&rsquo;t have either of these problems. The IDs are opaque bit streams that carry no information about Alice to Bob, and Bob doesn&rsquo;t have to trust that Alice was honest about her name. All he has to do is trust the Charity to function correctly.</p>
+<p>This suggests two methods for analyzing situations where raw-reference equality is needed:</p>
+<ol>
+<li>Consider the namespace that these raw references will be a part of and how this intersects with the authority provided by capabilities. Who controls it? In the reference equality solution, it&rsquo;s the E language. In the named-based sessions, it&rsquo;s the users. In the ID-based solution, it&rsquo;s The Charity. Because trust flows from the Charity and to Alice and Bob, the session-ID based solution is the best of the ones here.</li>
+<li>Consider what raw reference equality <em>means</em> semantically in your application. If we had gone with the name-based solution, then our reference equality check would have been required to normalize capital letters, strip out white space, and be locale aware to be resilient. The session ID solution is simpler, as raw reference equality is equivalent to bit equality.</li>
+</ol>
+<p>But let&rsquo;s get back to POLA, notice that now the Charity is violating POLA. We&rsquo;ve managed to push the &lsquo;resolution of references&rsquo; problem into the much smaller &lsquo;resolution of sessions&rsquo; problem but in doing so now the Charity has to spend a lot of time and effort maintaining all this reference namespace resolution infrastructure. What if we spun that out into it&rsquo;s own Object?</p>
+<p>We could imagine a &lsquo;Charity Namespace&rsquo; object which maintains this kind of session infrastructure, as well as lists of raw charity IDs and their corresponding  capability-references. This namespace service could use confinement to instantiate arbitrary objects (e.g. a Grant Matcher) which all session participants know refers to the same backing raw Charity Id.</p>
+<p>A system like this would also provide an intuitive interface between the world of simple human identifiers and rich OCap references. Part of maintaining your computer system involves maintaining your own name resolver and running your programs with the capabilities provided by that resolver and strings provided by the user. These could even be composed together further, because it&rsquo;s all just capability references in the end!</p>
+<h3 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h3>
+<p>The Grant Matcher Puzzle is fundamentally flawed because it&rsquo;s setup violates POLA and it&rsquo;s resolution obscures the underlying dynamics of raw reference equality. All solutions that prevent Bob from losing his money require violating 2 premises of the puzzle: no communication between Alice and Bob and no trust in the Charity. But having a resilient, safe solution to this puzzle does not require the violation of referential transparency.</p>
+<p>Fixing the puzzle to more closely match how trust works in real life illustrates an interesting problem: How do two mutually defensive objects agree on their relationship to a third Object? I propose that the solution to this kind of problem requires the creation of a mutually trusted namespace object, through which these kinds of naming conflicts can be robustly resolved. We may never be rid of <em>a</em> reference equality operator, but at least we don&rsquo;t need to use <em>the</em> reference equality operator.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Actually, not quite, but I&rsquo;ll get to that in the next section&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://mikayla-maki.github.io/">Mikayla&#39;s Project Updates</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
