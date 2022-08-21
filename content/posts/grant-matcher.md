@@ -23,29 +23,29 @@ Let's imagine a world with the following Objects:
 
 The Grant Matcher's job is simple: Check if both Alice and Bob donated $10 to it. If they both did, send their combined money ($20) to the Charity. If they didn't, refund their money. Alice and Bob do not trust each other but they do trust the Grant Matcher to perform it's duties. Finally, Alice and Both both have a reference to the Grant Matcher and a reference to the charity. Here's a diagram of the setup:
 
-!(Black, thin arrows denote references, circles denote objects. Access is authority in Object Capabilities, so both Alice and Bob can talk to the grant matcher and the Charity, but not to each other.)[/static/grant-matcher/initial.png]
+    !(Black, thin arrows denote references, circles denote objects. Access is authority in Object Capabilities, so both Alice and Bob can talk to the grant matcher and the Charity, but not to each other.)[/static/grant-matcher/initial.png]
 
  Here's how it should go, Alice and Bob send the Grant Matcher their cash, the grant matcher checks that their donations match, and the grant matcher sends their money on:
  
- !(1. Alice sends $10 to the Grant Matcher. 2. Bob sends $10 to the Grant Matcher. 3. The Grant Matcher donates their $20 to the Charity)[/static/grant-matcher/success.png]
+    !(1. Alice sends $10 to the Grant Matcher. 2. Bob sends $10 to the Grant Matcher. 3. The Grant Matcher donates their $20 to the Charity)[/static/grant-matcher/success.png]
 
 But there's a problem with this picture: messages can only be sent when there's a reference to an Object, and according to the setup to this puzzle the Grant Matcher doesn't have a reference to the Charity. Let's fix this by adding references to the messages that Alice and Bob send:
 
- !(1. Alice now sends $10 to the Grant Matcher and a reference to the charity. 2. Bob now sends $10 to the Grant Matcher and a reference to the charity.)[/static/grant-matcher/refs.png]
+    !(1. Alice now sends $10 to the Grant Matcher and a reference to the charity. 2. Bob now sends $10 to the Grant Matcher and a reference to the charity.)[/static/grant-matcher/refs.png]
 
 
 But here's the crux of the problem: how does the grant matcher know if these references are equal? To preserve referential transparency, the Grant Matcher must ask both references for their identity. Alice can use this fact to insert a reference to a Fake Charity:
 
 
- !(1. Alice now sends $10 to the Grant Matcher and a reference to a Fake Charity object. 2. Bob now sends $10 to the Grant Matcher and a reference to the real charity. The grant matcher then sends a message to both the fake and real charity asking for their identity. The fake charity forwards this message on to the real Charity)[/static/grant-matcher/fake-attack.png]
+    !(1. Alice now sends $10 to the Grant Matcher and a reference to a Fake Charity object. 2. Bob now sends $10 to the Grant Matcher and a reference to the real charity. The grant matcher then sends a message to both the fake and real charity asking for their identity. The fake charity forwards this message on to the real Charity)[/static/grant-matcher/fake-attack.png]
 
 When the Grant Matcher tries to ask for the charity ID, Alice's Fake Charity can forward the message on to the real charity, and then return the results to the grant matcher:
 
- !(The same image as before, but now annotated with the response from the Charity, 'KEQD', going to both the Grant Matcher and the Fake Charity. The Fake Charity then returns the same identifier, 'KEQD', to the Grant Matcher. The grant matcher then thinks 'Both references say they're the same thing, great! These references must match.')[/static/grant-matcher/message-forwarding.png]
+    !(The same image as before, but now annotated with the response from the Charity, 'KEQD', going to both the Grant Matcher and the Fake Charity. The Fake Charity then returns the same identifier, 'KEQD', to the Grant Matcher. The grant matcher then thinks 'Both references say they're the same thing, great! These references must match.')[/static/grant-matcher/message-forwarding.png]
 
 The grant matcher then picks Alice's reference to send the donation on and Alice's fake charity sees that this message has the money on it, and instead sends it to Alice!
 
-!(The grant matcher sends a message to donate $20 to Alice's fake charity, and the fake charity forwards that Message to Alice, successfully stealing Bob's money)[/static/grant-matcher/fake-steals.png]
+    !(The grant matcher sends a message to donate $20 to Alice's fake charity, and the fake charity forwards that Message to Alice, successfully stealing Bob's money)[/static/grant-matcher/fake-steals.png]
 
 So we're at an impasse. Capabilities require referential transparency to provide their value, but referential transparency creates a serious security problem. 
 
@@ -61,7 +61,7 @@ The other solution is to use a sealer where the charity holds the corresponding 
 
 So now that we've seen the problem and the solutions, let's take a step back, why does this problem exist at all? I propose that in the setup of the Grant Matcher puzzle, there is a violation of the Principle of Least Authority that causes all of these issues. Let's go back to that successful grant match diagram:
 
- !(1. Alice sends $10 to the Grant Matcher. 2. Bob sends $10 to the Grant Matcher. 3. The Grant Matcher donates their $20 to the Charity)[/static/grant-matcher/success.png]
+    !(1. Alice sends $10 to the Grant Matcher. 2. Bob sends $10 to the Grant Matcher. 3. The Grant Matcher donates their $20 to the Charity)[/static/grant-matcher/success.png]
 
 The problem with this situation was that, according to the puzzle setup, the Grant Matcher doesn't know about the Charity. Because it doesn't know about the charity, the Grant Matcher must be given both the authority to check matching donations, as well as the authority to resolve the two references into a single 'true reference'. It's this second authority which breaks encapsulation, forces the Grant Matcher to use a raw reference equality check, and make Alice and Bob unable to cooperate.
 
@@ -73,7 +73,7 @@ However, the sealer/unsealer pair solution to the Grant Matcher puzzle requires 
 
 Back to the puzzle. Intially there are only Alice, Bob, and a Charity. Alice and Bob use their references to ask the Charity to create a grant matcher, it gives them references to a Grant Matcher that the Charity has created. This Grant Matcher contains a reference back to the Charity:
 
- !(In this new initial state, Alice and Bob both ask the Charity for a new Grant Matcher. The Charity instantiates a Grant Matcher with a reference to the charity)[/static/grant-matcher/new-intial.png]
+    !(In this new initial state, Alice and Bob both ask the Charity for a new Grant Matcher. The Charity instantiates a Grant Matcher with a reference to the charity)[/static/grant-matcher/new-intial.png]
  
  Now there isn't even a puzzle. Alice and Bob can't forward references to the Grant Matcher (it only cares about their money) and so Alice can't launch her attack on the Grant Matcher. This also preserves referential transparency, as Alice and Bob's references to the Charity, and their references to the Grant Matcher, can be behind as many different kinds of references as they please. All that matters is that the Charity is capable of receiving Alice and Bob's messages, is capable of giving them a reference to the new grant matcher, and the Grant Matcher is eventually capable of being called twice with the money.
  
@@ -83,7 +83,7 @@ Back to the puzzle. Intially there are only Alice, Bob, and a Charity. Alice and
   
  An issue with the example above is that the Charity must somehow know who to send which references. We can imagine a scenario where there are thousands of people all simultaneously starting and resolving Grant Matcher sessions on this Charity. the Charity will need some identifier associated with both Alice and Bob which uniquely identifies their session. There are at least two different ways this could work:
  
- 1. Name-based. Alice provides a name for Bob when requesting a session: 'Start Grant Matcher with Bob, from Alice'. Alice then tells Bob, through a third party, that she used the name 'Alice' for herself and 'Bob' for him. Bob then sends the reverse message: 'Start Grant Matcher with Alice, from Bob'. The strings 'Alice' and 'Bob' are raw references to these two objects in the namespace of 'all users that could start grant matcher sessions with this Charity' and so the Charity must do a raw reference equality check with these strings to create their session. 
+ 1. Name-based. Alice provides a name for Bob when requesting a session: 'Start Grant Matcher with Bob, from Alice'. Alice then tells Bob, through a third party, that she used the name 'Alice' for herself and 'Bob' for him. Bob then sends the reverse message: 'Start Grant Matcher with Alice, from Bob'. The strings 'Alice' and 'Bob' are raw references to these two objects in the namespace of 'all users that could start grant matcher sessions with this Charity' and so the Charity must do a raw reference equality check with these strings to create their session. Note that this reference equality check is actually a *name* equality check, which requires special handling for different locales and representations.
  
  2. ID-based. Alice sends a 'Start Grant Matcher Session' message to the charity. The charity returns a session ID to Alice. Alice hands this session ID to Bob through a third party, and Bob sends a 'Join Grant Matcher Session with ID' to the charity. The session ID is a raw reference in the namespace of 'current active grant matcher sessions' and so the Charity must do a raw reference equality check with this session ID against it's list of existing sessions. 
  
@@ -94,6 +94,7 @@ But the coordination required to create either of these two solutions is much sm
 This suggests two methods for analyzing situations where raw-reference equality is needed:
 
 1. Consider the namespace that these raw references will be a part of and how this intersects with the authority provided by capabilities. Who controls it? In the reference equality solution, it's the E language. In the named-based sessions, it's the users. In the ID-based solution, it's The Charity. Because trust flows from the Charity and to Alice and Bob, the session-ID based solution is the best of the ones here.
+
 2. Consider what raw reference equality *means* semantically in your application. If we had gone with the name-based solution, then our reference equality check would have been required to normalize capital letters, strip out white space, and be locale aware to be resilient. The session ID solution is simpler, as raw reference equality is equivalent to bit equality.
 
 But let's get back to POLA, notice that now the Charity is violating POLA. We've managed to push the 'resolution of references' problem into the much smaller 'resolution of sessions' problem but in doing so now the Charity has to spend a lot of time and effort maintaining all this reference namespace resolution infrastructure. What if we spun that out into it's own Object?
