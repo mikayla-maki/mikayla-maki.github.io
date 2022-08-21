@@ -60,7 +60,7 @@ The other solution is to use a sealer where the charity holds the corresponding 
 
 So now that we've seen the problem and the solutions, let's take a step back, why does this problem exist at all? I propose that in the setup of the Grant Matcher puzzle, there is a violation of the Principle of Least Authority that causes all of these issues. Let's go back to that successful grant match diagram:
 
-    !(1. Alice sends $10 to the Grant Matcher. 2. Bob sends $10 to the Grant Matcher. 3. The Grant Matcher donates their $20 to the Charity)[/static/grant-matcher/success.png]
+{{< figure src="/grant-matcher/success.png" caption="First, Alice sends $10 to the Grant Matcher. Then Bob sends $10 to the Grant Matcher. Then the Grant Matcher donates their $20 to the Charity" >}}
 
 The problem with this situation was that, according to the puzzle setup, the Grant Matcher doesn't know about the Charity. Because it doesn't know about the charity, the Grant Matcher must be given both the authority to check matching donations, as well as the authority to resolve the two references into a single 'true reference'. It's this second authority which breaks encapsulation, forces the Grant Matcher to use a raw reference equality check, and make Alice and Bob unable to cooperate.
 
@@ -72,7 +72,7 @@ However, the sealer/unsealer pair solution to the Grant Matcher puzzle requires 
 
 Back to the puzzle. Intially there are only Alice, Bob, and a Charity. Alice and Bob use their references to ask the Charity to create a grant matcher, it gives them references to a Grant Matcher that the Charity has created. This Grant Matcher contains a reference back to the Charity:
 
-    !(In this new initial state, Alice and Bob both ask the Charity for a new Grant Matcher. The Charity instantiates a Grant Matcher with a reference to the charity)[/static/grant-matcher/new-intial.png]
+{{< figure src="/grant-matcher/new-initial.png" caption="In this new initial state, Alice and Bob both ask the Charity for a new Grant Matcher. The Charity instantiates a Grant Matcher with a reference to the charity" >}}
  
  Now there isn't even a puzzle. Alice and Bob can't forward references to the Grant Matcher (it only cares about their money) and so Alice can't launch her attack on the Grant Matcher. This also preserves referential transparency, as Alice and Bob's references to the Charity, and their references to the Grant Matcher, can be behind as many different kinds of references as they please. All that matters is that the Charity is capable of receiving Alice and Bob's messages, is capable of giving them a reference to the new grant matcher, and the Grant Matcher is eventually capable of being called twice with the money.
  
@@ -96,17 +96,17 @@ This suggests two methods for analyzing situations where raw-reference equality 
 
 2. Consider what raw reference equality *means* semantically in your application. If we had gone with the name-based solution, then our reference equality check would have been required to normalize capital letters, strip out white space, and be locale aware to be resilient. The session ID solution is simpler, as raw reference equality is equivalent to bit equality.
 
-But let's get back to POLA, notice that now the Charity is violating POLA. We've managed to push the 'resolution of references' problem into the much smaller 'resolution of sessions' problem but in doing so now the Charity has to spend a lot of time and effort maintaining all this reference namespace resolution infrastructure. What if we spun that out into it's own Object?
+But let's get back to POLA, notice that now the Charity is violating POLA. We've managed to push the 'resolution of references' problem into the much smaller 'resolution of sessions' problem but in doing so now the Charity is juggling all these sessions when really all it needs to do is receive money (and, presumably, help people). What if we spun this session resolution out into it's own Object?
 
-We could imagine a 'Charity Namespace' object which maintains this kind of session infrastructure, as well as lists of raw charity IDs and their corresponding  capability-references. This namespace service could use confinement to instantiate arbitrary objects (e.g. a Grant Matcher) which all session participants know refers to the same backing raw Charity Id.
+We could imagine a 'Charity Namespace' object which maintains this kind of session infrastructure, as well as lists of raw charity IDs and their corresponding  capability-references. This namespace service could use confinement to instantiate arbitrary objects (e.g. a Grant Matcher, or any other kind of Object) which all session participants know refers to the same backing raw Charity ID.
 
-A system like this would also provide an intuitive interface between the world of simple human identifiers and rich OCap references. Part of maintaining your computer system involves maintaining your own name resolver and running your programs with the capabilities provided by that resolver and strings provided by the user. These could even be composed together further, because it's all just capability references in the end! 
+A system like this would also provide an intuitive interface between the world of simple human identifiers and rich OCap references. Part of maintaining your computer system would involve maintaining your own name resolver and running your programs with the capabilities provided by that resolver and strings provided by the user. These could even be composed together further, because it's all just capability references in the end! 
 
 ### Conclusion
 
-The Grant Matcher Puzzle is fundamentally flawed because it's setup violates POLA and it's resolution obscures the underlying dynamics of raw reference equality. All solutions that prevent Bob from losing his money require violating 2 premises of the puzzle: no communication between Alice and Bob and no trust in the Charity. But having a resilient, safe solution to this puzzle does not require the violation of referential transparency.
+The Grant Matcher Puzzle is fundamentally flawed because it's setup violates POLA and it's resolution obscures the underlying dynamics of when and why raw reference equality is useful. All solutions that prevent Bob from losing his money require violating 2 premises of the puzzle: no communication between Alice and Bob and no trust in the Charity. But having a resilient, safe solution to this puzzle does not require the violation of referential transparency.
 
-Fixing the puzzle to more closely match how trust works in real life illustrates an interesting problem: How do two mutually defensive objects agree on their relationship to a third Object? I propose that the solution to this kind of problem requires the creation of a mutually trusted namespace object, through which these kinds of naming conflicts can be robustly resolved. We may never be rid of *a* reference equality operator, but at least we don't need to use *the* reference equality operator. 
+Fixing the puzzle to more closely match how trust works in a real situation illustrates an interesting problem: How do two mutually defensive objects agree on their relationship to a third Object? I propose that the solution to this class of problem requires the creation of a mutually trusted namespace, through which these kinds of naming conflicts can be robustly resolved. I also propose that we can analyze these namespaces by looking at the space of possible references, who creates references in this space and why, and what reference equality means in this namespace's specific context. We may never be rid of *a* reference equality operator, but at least we don't need to use *the* reference equality operator. 
     
 
 [^1]: Actually, not quite, but I'll get to that in the next section
