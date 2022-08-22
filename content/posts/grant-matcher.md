@@ -99,7 +99,7 @@ The ID based solution requires Bob and Alice to be in some kind of communication
  
  We could also imagine a similar kind of protocol that provides a name resolution service for the Charity, that similarly wraps up raw name references into Objects.
  
- Note that, just like the original two solutions, both of these new solutions require that either Alice and Bob have some shared out of band information, or that Alice and Bob coordinate directly to create their Grant Matcher. The Grant Matcher puzzle is simply impossible to solve perfectly without one of these two changes. It is possible to solve imperfectly though, with the sealer/unsealer method.
+ Note that, just like the original reference equality solution, both of these new solutions require that either Alice and Bob have some shared out of band information, or that Alice and Bob coordinate directly to create their Grant Matcher. The Grant Matcher puzzle is simply impossible to solve perfectly without one of these two changes, though it is possible to solve imperfectly with the sealer/unsealer method. 
 
  ### The Return of Reference Equality
  
