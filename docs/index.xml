@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mikayla&#39;s Project Updates</title>
     <link>https://mikayla-maki.github.io/</link>
     <description>Recent content on Mikayla&#39;s Project Updates</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Aug 2022 15:15:00 -0700</lastBuildDate><atom:link href="https://mikayla-maki.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Sep 2022 13:10:00 -0700</lastBuildDate><atom:link href="https://mikayla-maki.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bio</title>
+      <link>https://mikayla-maki.github.io/posts/bio/</link>
+      <pubDate>Wed, 28 Sep 2022 13:10:00 -0700</pubDate>
+      
+      <guid>https://mikayla-maki.github.io/posts/bio/</guid>
+      <description>Mikayla started working in software as a freelance programmer, building WordPress websites for small businesses from 2015 to 2017.
+In 2018 she decided to return to school, going to Portland State University and study P2P software, CRDTs, and distributed web technologies with Rust.
+As an intern at zed.dev for the summer of 2022, she built the integrated Terminal Emulator, and was subsequently hired.
+In her spare time she helps teach high schoolers in rural Oregon the basics of computer programming.</description>
+    </item>
+    
     <item>
       <title>The Implications of the Grant Matcher Puzzle</title>
       <link>https://mikayla-maki.github.io/posts/grant-matcher/</link>
@@ -28,13 +40,33 @@ Breaking the Chain: I-Confluence and Cryptocurrency. Managing byzantine faults i
     </item>
     
     <item>
+      <title>Bottom Surgery</title>
+      <link>https://mikayla-maki.github.io/posts/bottom-surgery/</link>
+      <pubDate>Wed, 02 Feb 2022 12:03:07 -0800</pubDate>
+      
+      <guid>https://mikayla-maki.github.io/posts/bottom-surgery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>P2P Data System</title>
+      <link>https://mikayla-maki.github.io/posts/p2p-data-system/</link>
+      <pubDate>Sat, 29 Jan 2022 10:49:45 -0800</pubDate>
+      
+      <guid>https://mikayla-maki.github.io/posts/p2p-data-system/</guid>
+      <description>Assumptions: (what is this?)
+Client-server architecture needs to be replaced by P2P This is a follow up to my previous post, describing what I think a P2P based internet architecture would look like
+Since my last post I got to bring this idea to some friends and colleagues and one of them pointed me to a strikingly similar project called Beaker Browser. They used the exact same architecture; public keys as addresses, file server in the browser, and DHT based routing; that I had envisioned.</description>
+    </item>
+    
+    <item>
       <title>P2P Browser</title>
       <link>https://mikayla-maki.github.io/posts/p2p-browser/</link>
       <pubDate>Sat, 22 Jan 2022 15:04:11 -0800</pubDate>
       
       <guid>https://mikayla-maki.github.io/posts/p2p-browser/</guid>
       <description>Assumptions: (what is this?)
- Client-server architecture needs to be replaced by P2P  I&amp;rsquo;ve been seeing a lot of talk from smart people about how to do a p2p internet properly, and I want to throw my own architecture proposal into the ring. My goal is to surpass the ease of use and accessibility of modern social media apps, while also structurally distributing power to users (also referred to as &amp;lsquo;peers&amp;rsquo;).</description>
+Client-server architecture needs to be replaced by P2P I&amp;rsquo;ve been seeing a lot of talk from smart people about how to do a p2p internet properly, and I want to throw my own architecture proposal into the ring. My goal is to surpass the ease of use and accessibility of modern social media apps, while also structurally distributing power to users (also referred to as &amp;lsquo;peers&amp;rsquo;).</description>
     </item>
     
     <item>
@@ -47,13 +79,22 @@ Breaking the Chain: I-Confluence and Cryptocurrency. Managing byzantine faults i
     </item>
     
     <item>
+      <title>First Class Forking</title>
+      <link>https://mikayla-maki.github.io/posts/first-class-forking/</link>
+      <pubDate>Sun, 09 Jan 2022 09:26:55 -0800</pubDate>
+      
+      <guid>https://mikayla-maki.github.io/posts/first-class-forking/</guid>
+      <description>In my research on blockchains and CRDTs, three related concepts keep re-asserting themselves: User-communities, first-class forking, and user-accessibility. Most of the really cool and useful shit out there is optimized to be developer accessible, while providing few or 0 ways to access their capabilities outside of the STEM thought bubble. First class forking is intimately related to the concept of user-communities. Both need to be made into first class features and there has been little (if any) work to do so.</description>
+    </item>
+    
+    <item>
       <title>Axioms of Action</title>
       <link>https://mikayla-maki.github.io/posts/axioms-of-action/</link>
       <pubDate>Fri, 07 Jan 2022 15:44:18 -0800</pubDate>
       
       <guid>https://mikayla-maki.github.io/posts/axioms-of-action/</guid>
       <description>Existence is philosophically difficult. What if we&amp;rsquo;re all in a simulation? What if we can&amp;rsquo;t truly know anything? What if nothing we do matters? To cut through this miasma I choose to put my faith in 3 axioms:
- Reality exists. Reality is perceivable. Reality can be effected.  Each of these statements bundles in the baseline philosophical claims that I need to logically convince my brain that it&amp;rsquo;s worthwhile to get out of bed.</description>
+Reality exists. Reality is perceivable. Reality can be effected. Each of these statements bundles in the baseline philosophical claims that I need to logically convince my brain that it&amp;rsquo;s worthwhile to get out of bed.</description>
     </item>
     
     <item>

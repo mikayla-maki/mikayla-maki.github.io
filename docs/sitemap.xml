@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mikayla-maki.github.io/posts/bio/</loc>
+    <lastmod>2022-09-28T13:10:00-07:00</lastmod>
+  </url><url>
     <loc>https://mikayla-maki.github.io/</loc>
-    <lastmod>2022-08-21T15:15:00-07:00</lastmod>
+    <lastmod>2022-09-28T13:10:00-07:00</lastmod>
   </url><url>
     <loc>https://mikayla-maki.github.io/posts/</loc>
-    <lastmod>2022-08-21T15:15:00-07:00</lastmod>
+    <lastmod>2022-09-28T13:10:00-07:00</lastmod>
   </url><url>
     <loc>https://mikayla-maki.github.io/posts/grant-matcher/</loc>
     <lastmod>2022-08-21T15:15:00-07:00</lastmod>
@@ -14,11 +17,20 @@
     <loc>https://mikayla-maki.github.io/posts/term-paper/</loc>
     <lastmod>2022-03-18T23:59:28-07:00</lastmod>
   </url><url>
+    <loc>https://mikayla-maki.github.io/posts/bottom-surgery/</loc>
+    <lastmod>2022-02-02T12:03:07-08:00</lastmod>
+  </url><url>
+    <loc>https://mikayla-maki.github.io/posts/p2p-data-system/</loc>
+    <lastmod>2022-01-29T10:49:45-08:00</lastmod>
+  </url><url>
     <loc>https://mikayla-maki.github.io/posts/p2p-browser/</loc>
     <lastmod>2022-01-22T15:04:11-08:00</lastmod>
   </url><url>
     <loc>https://mikayla-maki.github.io/posts/ms-idea-graph-format-specifier/</loc>
     <lastmod>2022-01-22T14:25:52-08:00</lastmod>
+  </url><url>
+    <loc>https://mikayla-maki.github.io/posts/first-class-forking/</loc>
+    <lastmod>2022-01-09T09:26:55-08:00</lastmod>
   </url><url>
     <loc>https://mikayla-maki.github.io/posts/axioms-of-action/</loc>
     <lastmod>2022-01-07T15:44:18-08:00</lastmod>
