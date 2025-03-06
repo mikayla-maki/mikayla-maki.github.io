@@ -31,6 +31,8 @@ but I will note the 'personal tastes' part. There is an inescapable value
 judgement going on here, therefore I say that I take reality's existence on
 faith. 
 
+Edit (2025): Actually, there's an even easier argument that assuming some religion is a much more specific claim than assuming that _something at all_ exists. Therefore, as these are axioms, I choose to make the weakest possible claim. 
+
 Second, reality is perceivable. This was hard for me, I wasn't sure it was
 even possible to know things due to cognitive biases and my own autism. I kept
 looking for certainty and finding probabilities. But with these axioms, I am
